@@ -14,12 +14,13 @@ const DogContainer = () => {
         .then(response => response.json())
         .then(dogs => setDogs(dogs))
 
+    }
     return (
 
         <DogsList dogs={dogs} />
     )
 }
 
-}
+
 
 export default DogContainer;
