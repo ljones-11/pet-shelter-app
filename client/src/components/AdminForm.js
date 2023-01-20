@@ -52,10 +52,11 @@ const AdminForm = ({onCatSubmit, onDogSubmit}) => {
     const handleFormSubmit = (event) => {
         event.preventDefault()
         const payload ={
-            name,
-            breed,
-            age,
-            about
+            name: name,
+            breed: breed,
+            age: age,
+            about: about,
+            image: image
         }
         if (type === Types.DOG) onDogSubmit(payload)
         if (type === Types.CAT) onCatSubmit(payload)
@@ -63,7 +64,7 @@ const AdminForm = ({onCatSubmit, onDogSubmit}) => {
     }
 
   return (
-   <form>
+   <form onSubmit={handleFormSubmit}>
         <label htmlFor='name'>Name:</label>
         <input type='text' name='name' value={name} onChange={handleNameChange}/>
 
@@ -86,7 +87,7 @@ const AdminForm = ({onCatSubmit, onDogSubmit}) => {
             <option value={Types.DOG}>Dog</option>
 
         </select>
-        <input type='submit' value='Save' />
+        <input type='submit' name='submit' value='Save' />
    </form>
   )
 }
