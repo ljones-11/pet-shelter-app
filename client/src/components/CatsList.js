@@ -8,7 +8,9 @@ const CatsList = ({cats}) => {
 
 
     return (
+        <>
         {catData}
+        </>
     )
 
 }
