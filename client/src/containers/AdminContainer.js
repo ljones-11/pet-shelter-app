@@ -1,5 +1,6 @@
 
 import {useEffect, useState} from 'react'
+import AdminAdoptionRequests from '../components/AdminAdoptionRequests'
 import AdminAnimals from '../components/AdminAnimals'
 import AdminForm from '../components/AdminForm'
 
@@ -7,10 +8,12 @@ const AdminContainer = () => {
 
     const [dogs, setDogs] = useState([])
     const [cats, setCats] = useState([])
+    const [adoptionRequests, setAdoptionRequests] = useState([])
 
     useEffect(() => {
         fetchDogs();
         fetchCats();
+        fetchAdoptionRequests();
     }, [])
 
     const fetchDogs = () => {
@@ -23,6 +26,12 @@ const AdminContainer = () => {
         fetch('http://localhost:9000/api/cats')
         .then(response => response.json())
         .then(cats => setCats(cats))
+    }
+
+    const fetchAdoptionRequests = () => {
+      fetch('http://localhost:9000/api/adoptionRequests')
+      .then(respone => respone.json())
+      .then(adoptionRequests => setAdoptionRequests(adoptionRequests))
     }
 
     const handleCatSubmit = newCat => {
@@ -47,6 +56,7 @@ const AdminContainer = () => {
     <div>
       <AdminAnimals dogs={dogs} cats={cats}/>
       <AdminForm onCatSubmit={handleCatSubmit} onDogSubmit={handleDogSubmit}/>
+      <AdminAdoptionRequests adoptionRequests={adoptionRequests}/>
     </div>
   )
 }

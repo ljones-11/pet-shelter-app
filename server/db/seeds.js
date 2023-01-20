@@ -52,5 +52,6 @@ const adoptionRequests = [
 
 db.cats.insertMany(cats);
 db.dogs.insertMany(dogs);
+db.adoptionRequests.insertMany(adoptionRequests);
 
 

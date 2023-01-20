@@ -19,9 +19,9 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const catsRouter = createRouter(catsCollection);
     app.use('/api/cats', catsRouter);
 
-    const adoptionCollection = db.collection('adoptionRequest');
+    const adoptionCollection = db.collection('adoptionRequests');
     const adoptionRouter = createRouter(adoptionCollection);
-    app.use('/api/adoptionRequest', adoptionRouter)
+    app.use('/api/adoptionRequests', adoptionRouter)
   })
   .catch(console.err);
 
