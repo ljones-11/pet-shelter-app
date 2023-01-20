@@ -7,7 +7,6 @@ const CatContainer = () => {
 const [cats, setCats] = useState([])
 
 useEffect(() => {
-    fetchDogs();
     fetchCats();
 }, [])
 
