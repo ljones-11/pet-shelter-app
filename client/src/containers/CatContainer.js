@@ -26,6 +26,5 @@ return (
     </div>
 )
 
-}
 
 export default CatContainer;

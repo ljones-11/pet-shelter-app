@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const MainContainer = () => {
+const Homepage = () => {
 
     const [dogs, setDogs] = useState([])
     const [cats, setCats] = useState([])
@@ -32,8 +32,11 @@ const MainContainer = () => {
 
 
     return (
-        <h1>I am the main container :)</h1>
+        <>
+            <h1>Welcome to Pet Shelter Tinder</h1>
+            <h2>This is the homepage</h2>
+        </>
     )
 }
 
-export default MainContainer;
+export default Homepage;
