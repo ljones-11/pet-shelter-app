@@ -5,10 +5,12 @@ const DogElement = ({dog}) => {
 
     return (
         <div>
+            <img src={dog.image} alt="no image"/>
             <h4>{ dog.name }</h4>
             <p>{ dog.breed }</p>
             <p>{ dog.age }</p>
             <p>{ dog.about }</p>
+
         </div>
 
     )
