@@ -33,7 +33,7 @@ const dogs = [
     }
 ];
 
-db.animals.insertMany(cats);
-db.animals.insertMany(dogs);
+db.cats.insertMany(cats);
+db.dogs.insertMany(dogs);
 
 
