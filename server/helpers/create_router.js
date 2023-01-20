@@ -19,6 +19,22 @@ const createRouter = function(collection) {
         });
     });
 
+    // GET a pet by ID
+
+    router.get('/:id', (req, res) => {
+        const id = req.params.id
+        collection
+        .findOne({ _id: ObjectID(id)})
+        .then((result) => {
+            res.json(result)
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500)
+            res.json({status: 500, error: err})
+        });
+    })
+
      // POST a new pet 
 
     router.post('/', (req, res) => {
