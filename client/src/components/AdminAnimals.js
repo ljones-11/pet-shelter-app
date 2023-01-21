@@ -1,7 +1,7 @@
 import React from 'react'
 import Singeldog from './Singeldog'
 
-const AdminAnimals = ({dogs, cats, updateDog, updateCat}) => {
+const AdminAnimals = ({dogs, cats, updateDog}) => {
 
   const dogNodes = dogs.map(dog => {
     return <Singeldog 
