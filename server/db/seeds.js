@@ -37,14 +37,14 @@ const adoptionRequests = [
     {
     firstName: 'William',
     lastName: 'Billiam',
-    phone: 09384925847,
+    phone: '09384925847',
     chosenAnimal: 'Sparky',
     personalStatement: 'I love dogs'
     },
     {
     firstName: 'Jimothy',
     lastName: 'Harrow',
-    phone: 09393486393,
+    phone: '09393486393',
     chosenAnimal: 'Tom',
     personalStatement: 'I love cats'
     }
@@ -52,5 +52,6 @@ const adoptionRequests = [
 
 db.cats.insertMany(cats);
 db.dogs.insertMany(dogs);
+db.adoptions.insertMany(adoptionRequests);
 
 
