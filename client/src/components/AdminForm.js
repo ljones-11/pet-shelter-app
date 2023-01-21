@@ -65,6 +65,7 @@ const AdminForm = ({onCatSubmit, onDogSubmit}) => {
 
   return (
    <form onSubmit={handleFormSubmit}>
+    <h2>Add a new animal for adoption</h2>
         <label htmlFor='name'>Name:</label>
         <input type='text' name='name' value={name} onChange={handleNameChange}/>
 

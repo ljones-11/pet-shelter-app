@@ -1,24 +1,37 @@
 import React from 'react'
+import AdminCat from './AdminCat'
+import AdminDog from './AdminDog'
 
-const AdminAnimals = ({dogs, cats}) => {
+const AdminAnimals = ({dogs, cats, updateDog, updateCat, handleDogDelete, handleCatDelete}) => {
 
+  const dogNodes = dogs.map(dog => {
+    return <AdminDog 
+    key= {dog._id} 
+    dog={dog}  
+    updateDog={updateDog}
+    handleDogDelete={handleDogDelete}
 
+    />    
+      })
+      
+    const catNodes = cats.map(cat => {
+        return <AdminCat 
+        key= {cat._id} 
+        cat={cat}  
+        updateCat={updateCat}
+        handleCatDelete={handleCatDelete}
+        />    
+          })
+          
   return (
     <div>
         <h2>All the animals</h2>
         <ul>
             <h2> all the dogs</h2>
-          {dogs.map(dog => {
-              return (
-                  <li key={dog.id}> {dog.name} {dog.breed} {dog.age} {dog.about}</li>
-                  )
-                })}
+            {dogNodes}
+         
             <h2>all the cats</h2>
-            {cats.map(cat =>{
-                return(
-                    <li key={cat.id}> {cat.name} {cat.breed} {cat.age} {cat.about} </li>
-                )
-            })}
+            {catNodes}
         </ul>
     </div>
   )
