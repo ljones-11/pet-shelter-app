@@ -58,14 +58,16 @@ const AdminContainer = () => {
       }
 
       // PUT UPDATED DOG
-     const handleDogUpdate = (dog) => {
-        return fetch(dogURL + dog._id, {
+     const handleDogUpdate = (dogData, dogId) => {
+       console.log('testiing ');
+       console.log(dogId);
+        return fetch(dogURL + dogId, {
           method: 'PUT',
-          body: JSON.stringify(dog),
+          body: JSON.stringify(dogData),
           headers: { 'Content-Type': 'application/json' }
       })
-      // .then(() => fetchDogs())
-      .then(res => res.json());
+      // .then(res => res.json());
+      .then(() => fetchDogs()) 
     }
 
 
@@ -77,9 +79,12 @@ const AdminContainer = () => {
         body: JSON.stringify(cat),
         headers: { 'Content-Type': 'application/json' }
       })
+    
         .then(() => fetchCats())
-
     }
+
+    // delete
+    
 
   return (
     <div>
