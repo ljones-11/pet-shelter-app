@@ -29,9 +29,9 @@ const AdminContainer = () => {
     }
 
     const fetchAdoptionRequests = () => {
-      fetch('http://localhost:9000/api/adoptionRequests')
+      fetch('http://localhost:9000/api/adoptions')
       .then(respone => respone.json())
-      .then(adoptionRequests => setAdoptionRequests(adoptionRequests))
+      .then(adoptions => setAdoptionRequests(adoptions))
     }
 
     const handleCatSubmit = newCat => {

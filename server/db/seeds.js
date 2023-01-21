@@ -33,7 +33,7 @@ const dogs = [
     }
 ];
 
-const adoptionRequests = [
+const adoptions = [
     {
     firstName: 'William',
     lastName: 'Billiam',
@@ -52,7 +52,7 @@ const adoptionRequests = [
 
 db.cats.insertMany(cats);
 db.dogs.insertMany(dogs);
-db.adoptions.insertMany(adoptionRequests);
+db.adoptions.insertMany(adoptions);
 
 
 
