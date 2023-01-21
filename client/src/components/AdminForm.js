@@ -56,7 +56,8 @@ const AdminForm = ({onCatSubmit, onDogSubmit}) => {
             breed: breed,
             age: age,
             about: about,
-            image: image
+            image: image,
+            adopted: false
         }
         if (type === Types.DOG) onDogSubmit(payload)
         if (type === Types.CAT) onCatSubmit(payload)
