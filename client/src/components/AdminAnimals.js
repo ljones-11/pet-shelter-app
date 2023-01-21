@@ -1,18 +1,23 @@
 import React from 'react'
+import Singeldog from './Singeldog'
 
-const AdminAnimals = ({dogs, cats}) => {
+const AdminAnimals = ({dogs, cats, updateDog, updateCat}) => {
 
-
+  const dogNodes = dogs.map(dog => {
+    return <Singeldog 
+    key= {dog._id} 
+    dog={dog}  
+    updateDog={updateDog}
+    />    
+      })
+      
   return (
     <div>
         <h2>All the animals</h2>
         <ul>
             <h2> all the dogs</h2>
-          {dogs.map(dog => {
-              return (
-                  <li key={dog.id}> {dog.name} {dog.breed} {dog.age} {dog.about}</li>
-                  )
-                })}
+            {dogNodes}
+         
             <h2>all the cats</h2>
             {cats.map(cat =>{
                 return(

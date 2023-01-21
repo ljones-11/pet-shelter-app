@@ -6,6 +6,8 @@ import AdminForm from '../components/AdminForm'
 
 const AdminContainer = () => {
 
+  const dogURL = 'http://localhost:9000/api/dogs/'
+
     const [dogs, setDogs] = useState([])
     const [cats, setCats] = useState([])
     const [adoptionRequests, setAdoptionRequests] = useState([])
@@ -16,24 +18,26 @@ const AdminContainer = () => {
         fetchAdoptionRequests();
     }, [])
 
+    // FETCH DOG
     const fetchDogs = () => {
         fetch('http://localhost:9000/api/dogs')
         .then(response => response.json())
         .then(dogs => setDogs(dogs))
     }
+    // FETCH CAT
 
     const fetchCats = () => {
         fetch('http://localhost:9000/api/cats')
         .then(response => response.json())
         .then(cats => setCats(cats))
     }
-
+  //FETCH ADOPTION REQUEST 
     const fetchAdoptionRequests = () => {
       fetch('http://localhost:9000/api/adoptionRequests')
       .then(respone => respone.json())
       .then(adoptionRequests => setAdoptionRequests(adoptionRequests))
     }
-
+    // POST NEW CAT
     const handleCatSubmit = newCat => {
         fetch('http://localhost:9000/api/cats', {
           method: 'POST',
@@ -43,6 +47,7 @@ const AdminContainer = () => {
           .then(() => fetchCats())
       }
     
+      // POST NEW DOG
       const handleDogSubmit = newDog => {
         fetch('http://localhost:9000/api/dogs', {
           method: 'POST',
@@ -52,9 +57,33 @@ const AdminContainer = () => {
           .then(() => fetchDogs())
       }
 
+      // PUT UPDATED DOG
+     const handleDogUpdate = (dog) => {
+        return fetch(dogURL + dog._id, {
+          method: 'PUT',
+          body: JSON.stringify(dog),
+          headers: { 'Content-Type': 'application/json' }
+      })
+      // .then(() => fetchDogs())
+      .then(res => res.json());
+    }
+
+
+    // PUT UPDATED CAT
+    const handleCatUpdate = (cat) => {
+
+      fetch('http://localhost:9000/api/cats', {
+        method: 'POST',
+        body: JSON.stringify(cat),
+        headers: { 'Content-Type': 'application/json' }
+      })
+        .then(() => fetchCats())
+
+    }
+
   return (
     <div>
-      <AdminAnimals dogs={dogs} cats={cats}/>
+      <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate}/>
       <AdminForm onCatSubmit={handleCatSubmit} onDogSubmit={handleDogSubmit}/>
       <AdminAdoptionRequests adoptionRequests={adoptionRequests}/>
     </div>
