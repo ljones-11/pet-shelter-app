@@ -45,7 +45,7 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
           age: cat.age,
           about: cat.about,
           image: cat.image,
-        adoptionTime: event.toLocaleDateString('en-UK', options)
+        adopted: event.toLocaleDateString('en-UK', options)
         
         }, cat._id)
       }
@@ -83,7 +83,7 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
             <p>Breed: { cat.breed }</p>
             <p>Age: { cat.age }</p>
             <p>About: { cat.about }</p>
-            <p>cat was adopted on: {cat.adoptionTime}</p>
+            <p>cat was adopted on: {cat.adopted}</p>
        <button onClick={editExistingCat}> Cat update</button>
         <button onClick={adoptCat}> Cat adopted</button>  
         <button onClick={deleteCat}>Delete</button>

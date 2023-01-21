@@ -50,7 +50,7 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
           age: dog.age,
           about: dog.about,
         //   image: dog.image,
-            adoptionTime: event.toLocaleDateString('en-UK', options)
+            adopted: event.toLocaleDateString('en-UK', options)
         
         }, dog._id)
       }
@@ -88,7 +88,7 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
             <p>Breed: { dog.breed }</p>
             <p>Age: { dog.age }</p>
             <p>About: { dog.about }</p>
-            <p>Dog was adopted on: {dog.adoptionTime}</p>
+            <p>Dog was adopted on: {dog.adopted}</p>
        <button onClick={editExistingDog}> Dog update</button>
         <button onClick={adoptDog}> Dog adopted</button> 
         <button onClick={deleteDog}>Delete</button>  
