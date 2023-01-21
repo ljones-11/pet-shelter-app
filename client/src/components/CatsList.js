@@ -10,9 +10,11 @@ const CatsList = ({cats}) => {
 
 
     return (
+
         <ul>
         {catData}
         </ul>
+
     )
 
 }
