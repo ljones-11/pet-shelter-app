@@ -2,6 +2,10 @@
 
 const CatElement = ({cat}) => {
 
+    if (cat.adopted) {
+        return null
+    }
+    
     return (
         <div>
             <h4>{cat.name}</h4>

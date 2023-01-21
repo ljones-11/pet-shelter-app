@@ -2,6 +2,9 @@ import React from "react";
 
 const DogElement = ({dog}) => {
 
+    if (dog.adopted) {
+        return null
+    }
 
     return (
         <div>
