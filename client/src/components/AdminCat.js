@@ -1,15 +1,12 @@
 import {useState} from 'react'
 
+const AdminCat = ({cat, updateCat}) => {
+    const [name, setName] = useState(cat.name)
+    const [age, setAge] = useState(cat.age)
+    const [breed, setBreed] = useState(cat.breed)
+    const [about, setAbout] = useState(cat.about)
 
-const Singeldog = ({dog, updateDog}) => {
-
-
-  const [name, setName] = useState(dog.name)
-    const [age, setAge] = useState(dog.age)
-    const [breed, setBreed] = useState(dog.breed)
-    const [about, setAbout] = useState(dog.about)
-
-    const [image, setImage] = useState(dog.image)
+    const [image, setImage] = useState(cat.image)
 
 
 
@@ -41,22 +38,20 @@ const Singeldog = ({dog, updateDog}) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 
-    const adoptDog = () => {
-        console.log('button is clicked');
-        updateDog({
-        //   _id: dog._id,
-          name: dog.name,
-          breed: dog.breed,
-          age: dog.age,
-          about: dog.about,
-        //   image: dog.image,
-            adoptionTime: event.toLocaleDateString('en-UK', options)
+    const adoptCat = () => {
+        updateCat({
+          name: cat.name,
+          breed: cat.breed,
+          age: cat.age,
+          about: cat.about,
+          image: cat.image,
+        adoptionTime: event.toLocaleDateString('en-UK', options)
         
-        }, dog._id)
+        }, cat._id)
       }
   const handleFormSubmit = (event) => {
           event.preventDefault()
-          const id = dog._id
+          const id = cat._id
           const payload ={
               name: name,
               breed: breed,
@@ -65,10 +60,10 @@ const Singeldog = ({dog, updateDog}) => {
               image: image
           }
           
-          updateDog(payload, id)
+          updateCat(payload, id)
           .then(setEditAnimal(false)) 
         }
-    const editExistingDog = () => {
+    const editExistingCat = () => {
         // open form
         setEditAnimal(true)
        
@@ -79,14 +74,14 @@ const Singeldog = ({dog, updateDog}) => {
     <div>
        {/* if edit animal is set to false it will just render all the dogs info */}
       {!editAnimal ? (
-      <li key={dog.id}> 
-         <h4>{ dog.name }</h4>
-            <p>Breed: { dog.breed }</p>
-            <p>Age: { dog.age }</p>
-            <p>About: { dog.about }</p>
-            <p>Dog was adopted on: {dog.adoptionTime}</p>
-       <button onClick={editExistingDog}> Dog update</button>
-        <button onClick={adoptDog}> Dog adopted</button>   </li>
+      <li key={cat.id}> 
+         <h4>{ cat.name }</h4>
+            <p>Breed: { cat.breed }</p>
+            <p>Age: { cat.age }</p>
+            <p>About: { cat.about }</p>
+            <p>cat was adopted on: {cat.adoptionTime}</p>
+       <button onClick={editExistingCat}> Cat update</button>
+        <button onClick={adoptCat}> Cat adopted</button>   </li>
       )
       // if editanimal is set to true it will open this form 
       : (
@@ -110,11 +105,9 @@ const Singeldog = ({dog, updateDog}) => {
         <input type='submit' name='submit' value='Save' />
    </form>
       )}
-     
-      
 
     </div>
   )
 }
 
-export default Singeldog
+export default AdminCat

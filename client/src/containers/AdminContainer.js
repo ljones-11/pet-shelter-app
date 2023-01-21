@@ -7,6 +7,7 @@ import AdminForm from '../components/AdminForm'
 const AdminContainer = () => {
 
   const dogURL = 'http://localhost:9000/api/dogs/'
+  const catURL ='http://localhost:9000/api/cats/'
 
     const [dogs, setDogs] = useState([])
     const [cats, setCats] = useState([])
@@ -59,8 +60,7 @@ const AdminContainer = () => {
 
       // PUT UPDATED DOG
      const handleDogUpdate = (dogData, dogId) => {
-       console.log('testiing ');
-       console.log(dogId);
+
         return fetch(dogURL + dogId, {
           method: 'PUT',
           body: JSON.stringify(dogData),
@@ -70,16 +70,14 @@ const AdminContainer = () => {
       .then(() => fetchDogs()) 
     }
 
-
     // PUT UPDATED CAT
-    const handleCatUpdate = (cat) => {
+    const handleCatUpdate = (catData, catId) => {
 
-      fetch('http://localhost:9000/api/cats', {
-        method: 'POST',
-        body: JSON.stringify(cat),
+      return fetch(catURL + catId, {
+        method: 'PUT',
+        body: JSON.stringify(catData),
         headers: { 'Content-Type': 'application/json' }
       })
-    
         .then(() => fetchCats())
     }
 

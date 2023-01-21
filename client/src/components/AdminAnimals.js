@@ -1,16 +1,25 @@
 import React from 'react'
-import Singeldog from './Singeldog'
+import AdminCat from './AdminCat'
+import AdminDog from './AdminDog'
 
-const AdminAnimals = ({dogs, cats, updateDog}) => {
+const AdminAnimals = ({dogs, cats, updateDog, updateCat}) => {
 
   const dogNodes = dogs.map(dog => {
-    return <Singeldog 
+    return <AdminDog 
     key= {dog._id} 
     dog={dog}  
     updateDog={updateDog}
     />    
       })
       
+    const catNodes = cats.map(cat => {
+        return <AdminCat 
+        key= {cat._id} 
+        cat={cat}  
+        updateCat={updateCat}
+        />    
+          })
+          
   return (
     <div>
         <h2>All the animals</h2>
@@ -19,11 +28,7 @@ const AdminAnimals = ({dogs, cats, updateDog}) => {
             {dogNodes}
          
             <h2>all the cats</h2>
-            {cats.map(cat =>{
-                return(
-                    <li key={cat.id}> {cat.name} {cat.breed} {cat.age} {cat.about} </li>
-                )
-            })}
+            {catNodes}
         </ul>
     </div>
   )
