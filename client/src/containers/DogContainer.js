@@ -7,6 +7,7 @@ const DogContainer = () => {
 
     const [dogs, setDogs] = useState([])
     const [adoptions, setAdoptions] = useState([])
+    const [showAdoptForm, setShowAdoptForm] = useState(false)
 
     useEffect(() => {
         fetchDogs();
@@ -32,10 +33,18 @@ const DogContainer = () => {
         })
           .then(() => fetchAdoptions())
       }
+
+      const handleAdoptMeClick = () => {
+        
+        if (showAdoptForm === false) {
+            setShowAdoptForm(!showAdoptForm)
+        } 
+      }
+      
     return (
         <div>
-        <DogsList dogs={dogs} />
-        <AdoptForm handleAdoption={handleAdoption}/>
+        <DogsList dogs={dogs} handleAdoptMeClick={handleAdoptMeClick}/>
+        {showAdoptForm ? <AdoptForm handleAdoption={handleAdoption}/> : null}
         </div>
     )
 }
