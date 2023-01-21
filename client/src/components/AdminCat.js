@@ -76,7 +76,7 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
     
   return (
     <div>
-       {/* if edit animal is set to false it will just render all the dogs info */}
+       {/* if edit animal is set to false it will just render all the cats info */}
       {!editAnimal ? (
       <li key={cat.id}> 
          <h4>{ cat.name }</h4>
