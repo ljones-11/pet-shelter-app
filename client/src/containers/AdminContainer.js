@@ -81,12 +81,24 @@ const AdminContainer = () => {
         .then(() => fetchCats())
     }
 
-    // delete
+    // DELETE Cat
+    const handleCatDelete = (catId) => {
+      return fetch(catURL + catId,{
+        method: 'DELETE'
+      })
+      .then(() => fetchCats())
+    }
     
+    const handleDogDelete = (dogId) => {
+      return fetch ( dogURL + dogId,{
+        method: 'DELETE'
+      })
+      .then(() => fetchDogs())
+    }
 
   return (
     <div>
-      <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate}/>
+      <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate} handleDogDelete={handleDogDelete} handleCatDelete={handleCatDelete}/>
       <AdminForm onCatSubmit={handleCatSubmit} onDogSubmit={handleDogSubmit}/>
       <AdminAdoptionRequests adoptionRequests={adoptionRequests}/>
     </div>

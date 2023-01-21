@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const AdminCat = ({cat, updateCat}) => {
+const AdminCat = ({cat, updateCat, handleCatDelete}) => {
     const [name, setName] = useState(cat.name)
     const [age, setAge] = useState(cat.age)
     const [breed, setBreed] = useState(cat.breed)
@@ -68,6 +68,10 @@ const AdminCat = ({cat, updateCat}) => {
         setEditAnimal(true)
        
     }
+
+    const deleteCat = () => {
+        handleCatDelete(cat._id)
+    }
   
     
   return (
@@ -81,7 +85,9 @@ const AdminCat = ({cat, updateCat}) => {
             <p>About: { cat.about }</p>
             <p>cat was adopted on: {cat.adoptionTime}</p>
        <button onClick={editExistingCat}> Cat update</button>
-        <button onClick={adoptCat}> Cat adopted</button>   </li>
+        <button onClick={adoptCat}> Cat adopted</button>  
+        <button onClick={deleteCat}>Delete</button>
+         </li>
       )
       // if editanimal is set to true it will open this form 
       : (
