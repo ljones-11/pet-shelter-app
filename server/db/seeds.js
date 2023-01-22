@@ -70,7 +70,7 @@ const dogs = [
             breed: 'Greyhound',
             age: 4,
             about: 'Loves other dogs',
-            image: 'https://https://images.pexels.com/photos/1906153/pexels-photo-1906153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.pexels.com/photos/11608986/pexels-photo-11608986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            image: 'https://images.pexels.com/photos/1906153/pexels-photo-1906153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
             adopted: false
             }
 ];
