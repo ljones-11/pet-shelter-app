@@ -7,6 +7,7 @@ const CatContainer = () => {
 
 const [cats, setCats] = useState([])
 const [adoptions, setAdoptions] = useState([])
+const [showAdoptForm, setShowAdoptForm] = useState(false)
 
 useEffect(() => {
     fetchCats();
@@ -34,10 +35,17 @@ const handleAdoption = newAdoption => {
       .then(() => fetchAdoptions())
   }
 
+  const handleAdoptMeClick = () => {
+        
+    if (showAdoptForm === false) {
+        setShowAdoptForm(!showAdoptForm)
+    } 
+  }
+
 return (
 
     <div>
-        <CatsList cats={cats}/>
+        <CatsList cats={cats} handleAdoptMeClick={handleAdoptMeClick}/>
         <AdoptForm handleAdoption={handleAdoption}/>
     </div>
 )

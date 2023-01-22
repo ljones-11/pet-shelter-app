@@ -7,7 +7,7 @@ border:none;
 
 `
 
-const CatElement = ({cat}) => {
+const CatElement = ({cat, handleAdoptMeClick}) => {
     const [favourites, setFavourites] = useState([])
     
     useEffect(()=> {
@@ -26,12 +26,13 @@ const CatElement = ({cat}) => {
     
     return (
         <div>
+            <img src={cat.image} alt="no image"/>
             <h4>{cat.name}</h4>
             <p>{cat.breed}</p>
             <p>{cat.age}</p>
             <p>{cat.about}</p>
             <HeartButton onClick={handleFavourites}><span>❤️</span></HeartButton>
-            <button>Adopt me!</button>
+            <button onClick={handleAdoptMeClick}>Adopt me!</button>
         </div>
     )
 }
