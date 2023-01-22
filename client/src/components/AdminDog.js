@@ -3,43 +3,33 @@ import {useState} from 'react'
 
 const AdminDog = ({dog, updateDog, handleDogDelete}) => {
 
-
-  const [name, setName] = useState(dog.name)
+    const [name, setName] = useState(dog.name)
     const [age, setAge] = useState(dog.age)
     const [breed, setBreed] = useState(dog.breed)
     const [about, setAbout] = useState(dog.about)
-
     const [image, setImage] = useState(dog.image)
 
-
-
+  // handle changes for form submissions
     const handleNameChange = (event) => {
         setName(event.target.value)
     }
-
     const handleBreedChange = (event) => {
         setBreed(event.target.value)
     }
-
     const handleAgeChange = (event) => {
         setAge(event.target.value)
     }
-
     const handleAboutChange = (event) => {
         setAbout(event.target.value)
     }
-
     const handleImageChange = (event) => {
         setImage(event.target.value)
     }
-
-
 
     const [editAnimal, setEditAnimal] = useState(false)
 // time declaration
     const event = new Date;
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
 
     const adoptDog = () => {
         console.log('button is clicked');
@@ -50,8 +40,7 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
           age: dog.age,
           about: dog.about,
         //   image: dog.image,
-            adopted: event.toLocaleDateString('en-UK', options)
-        
+            adopted: event.toLocaleDateString('en-UK', options)   
         }, dog._id)
       }
   const handleFormSubmit = (event) => {
@@ -70,15 +59,12 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
         }
     const editExistingDog = () => {
         // open form
-        setEditAnimal(true)
-       
+        setEditAnimal(true)     
     }
-
     const deleteDog = () => {
       handleDogDelete(dog._id)
     }
   
-    
   return (
     <div>
        {/* if edit animal is set to false it will just render all the dogs info */}
@@ -111,14 +97,11 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
         <input type='text' name='about' value={about} onChange={handleAboutChange}/>
         
         <label htmlFor='image'>Image:</label>
-        <input type='text' name='image' value={image} onChange={handleImageChange}/>
-        
+        <input type='text' name='image' value={image} onChange={handleImageChange}/>  
         <input type='submit' name='submit' value='Save' />
    </form>
       )}
      
-      
-
     </div>
   )
 }

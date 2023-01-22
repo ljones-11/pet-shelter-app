@@ -1,7 +1,5 @@
 import {useState} from 'react'
 
-
-
 const AdminForm = ({onCatSubmit, onDogSubmit}) => {
 
     const [name, setName] = useState('')
@@ -19,27 +17,21 @@ const AdminForm = ({onCatSubmit, onDogSubmit}) => {
     const handleNameChange = (event) => {
         setName(event.target.value)
     }
-
-    const handleBreedChange = (event) => {
+      const handleBreedChange = (event) => {
         setBreed(event.target.value)
     }
-
     const handleAgeChange = (event) => {
         setAge(event.target.value)
     }
-
     const handleAboutChange = (event) => {
         setAbout(event.target.value)
     }
-
     const handleImageChange = (event) => {
         setImage(event.target.value)
     }
-
     const handleTypeChange = (event) => {
         setType(event.target.value)
     }
-
     const resetForm = () => {
         setName('')
         setBreed('')

@@ -5,32 +5,23 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
     const [age, setAge] = useState(cat.age)
     const [breed, setBreed] = useState(cat.breed)
     const [about, setAbout] = useState(cat.about)
-
     const [image, setImage] = useState(cat.image)
-
-
-
+  // handle changes for form submissions
     const handleNameChange = (event) => {
         setName(event.target.value)
     }
-
     const handleBreedChange = (event) => {
         setBreed(event.target.value)
     }
-
     const handleAgeChange = (event) => {
         setAge(event.target.value)
     }
-
     const handleAboutChange = (event) => {
         setAbout(event.target.value)
     }
-
     const handleImageChange = (event) => {
         setImage(event.target.value)
     }
-
-
 
     const [editAnimal, setEditAnimal] = useState(false)
 // time declaration
@@ -89,7 +80,7 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
         <button onClick={deleteCat}>Delete</button>
          </li>
       )
-      // if editanimal is set to true it will open this form 
+      // if edit animal is set to true it will open this form 
       : (
         <form onSubmit={handleFormSubmit}>
           <h3>Update Form</h3>
