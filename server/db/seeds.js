@@ -67,7 +67,7 @@ const dogs = [
         },
         {
             name: 'Fred',
-            breed: 'Greyhound',
+            breed: 'brown dog',
             age: 4,
             about: 'Loves other dogs',
             image: 'https://images.pexels.com/photos/1906153/pexels-photo-1906153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
