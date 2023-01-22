@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url('../public/fonts/gotham-rounded/GothamRoundedBold_21016.ttf') format('truetype');
+}
 
 /* Box sizing rules */
 *,
@@ -72,4 +76,37 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+
+.header-container {
+  margin-top: 2em;;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:1em;
+}
+
+.logo-img {
+  height:7em;
+  margin:0;
+}
+
+.title-h1 {
+  font-family:'Gotham Rounded';
+  font-size: 5em;
+  color: #424242
+}
+
+.nav-container {
+  display:flex;
+  flex-direction: column;
+}
+
+.nav-ul {
+  font-family: 'Gotham Rounded';
+  font-size: 1.2em;;
+  display:flex;
+  list-style: none;
+  gap:2em;
 }

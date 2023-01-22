@@ -33,8 +33,7 @@ const Homepage = () => {
 
     return (
         <>
-            <h1>Welcome to Pet Shelter Tinder</h1>
-            <h2>This is the homepage</h2>
+            <h2 className='title-h2'>This is the homepage</h2>
         </>
     )
 }
