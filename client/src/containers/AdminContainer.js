@@ -5,7 +5,7 @@ import AdminAnimals from '../components/AdminAnimals'
 import AdminForm from '../components/AdminForm'
 
 const AdminContainer = () => {
-
+// url used for id PUT
   const dogURL = 'http://localhost:9000/api/dogs/'
   const catURL ='http://localhost:9000/api/cats/'
 
@@ -26,7 +26,6 @@ const AdminContainer = () => {
         .then(dogs => setDogs(dogs))
     }
     // FETCH CAT
-
     const fetchCats = () => {
         fetch('http://localhost:9000/api/cats')
         .then(response => response.json())
@@ -60,8 +59,7 @@ const AdminContainer = () => {
 
       // PUT UPDATED DOG
      const handleDogUpdate = (dogData, dogId) => {
-
-        return fetch(dogURL + dogId, {
+      return fetch(dogURL + dogId, {
           method: 'PUT',
           body: JSON.stringify(dogData),
           headers: { 'Content-Type': 'application/json' }
@@ -72,7 +70,6 @@ const AdminContainer = () => {
 
     // PUT UPDATED CAT
     const handleCatUpdate = (catData, catId) => {
-
       return fetch(catURL + catId, {
         method: 'PUT',
         body: JSON.stringify(catData),
@@ -98,9 +95,9 @@ const AdminContainer = () => {
 
   return (
     <div>
-      <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate} handleDogDelete={handleDogDelete} handleCatDelete={handleCatDelete}/>
       <AdminForm onCatSubmit={handleCatSubmit} onDogSubmit={handleDogSubmit}/>
       <AdminAdoptionRequests adoptionRequests={adoptionRequests}/>
+      <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate} handleDogDelete={handleDogDelete} handleCatDelete={handleCatDelete}/>
     </div>
   )
 }

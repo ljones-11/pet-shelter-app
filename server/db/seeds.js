@@ -33,7 +33,7 @@ const cats = [
             breed: 'Sphinx',
             age: 7,
             about: 'Needs warmth and attention',
-            image: 'https://images.pexels.chttps://images.pexels.com/photos/991831/pexels-photo-991831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2om/photos/590490/pexels-photo-590490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            image: 'https://images.pexels.com/photos/991831/pexels-photo-991831.jpeg',
             adopted: false
             }
 ];

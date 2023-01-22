@@ -13,8 +13,6 @@ const AdminAdoptionRequests = ({adoptionRequests}) => {
                   </li>
             )
         })}
-
-
     </div>
   )
 }
