@@ -98,9 +98,9 @@ const AdminContainer = () => {
 
   return (
     <div>
-      <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate} handleDogDelete={handleDogDelete} handleCatDelete={handleCatDelete}/>
       <AdminForm onCatSubmit={handleCatSubmit} onDogSubmit={handleDogSubmit}/>
       <AdminAdoptionRequests adoptionRequests={adoptionRequests}/>
+      <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate} handleDogDelete={handleDogDelete} handleCatDelete={handleCatDelete}/>
     </div>
   )
 }
