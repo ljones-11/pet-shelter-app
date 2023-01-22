@@ -1,7 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import styled from 'styled-components';
+
+const HeartButton = styled.button`
+background-color: transparent;
+border:none;
+
+`
 
 const DogElement = ({dog, handleAdoptMeClick}) => {
 
+    const [favourites, setFavourites] = useState([])
+    
+    useEffect(()=> {
+        handleFavourites();
+    },[])
+
+    const handleFavourites = (event) => {
+        console.log('Favourited!')
+    }
 
 
     if (dog.adopted) {
@@ -15,6 +31,7 @@ const DogElement = ({dog, handleAdoptMeClick}) => {
             <p>{ dog.breed }</p>
             <p>{ dog.age }</p>
             <p>{ dog.about }</p>
+            <HeartButton onClick={handleFavourites}><span>❤️</span></HeartButton>
             <button onClick={handleAdoptMeClick}>Adopt Me!</button>
 
         </div>

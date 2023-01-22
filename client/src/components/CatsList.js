@@ -1,14 +1,14 @@
 import CatElement from "./CatElement";
 import { useState } from "react";
 
-const CatsList = ({cats}) => {
+const CatsList = ({cats, handleAdoptMeClick}) => {
     const [count, setCount] = useState(0);
 
     const oneCat = cats.slice(count, count+1);
 
     const catData = oneCat.map((cat) => {
         return <li>
-            <CatElement cat={cat} key={cat._id}/>
+            <CatElement cat={cat} key={cat._id} handleAdoptMeClick={handleAdoptMeClick}/>
             </li>
     })
 
