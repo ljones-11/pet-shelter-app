@@ -14,7 +14,7 @@ const PageHome = styled.div`
 const Title = styled.h1`
     text-align: center;
     padding: 0.5em;
-    font-family: 'proxima-nova';
+    font-family: 'Gotham Rounded';
     color: #434343;
 `
 
