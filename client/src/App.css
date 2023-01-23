@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('/Users/lj/Desktop/G34/projects/project2/pet_shelter_app/client/public/fonts/Proxima Nova Font.otf') format('truetype');
+  src: url('../public/fonts/Proxima Nova Font.otf') format('truetype');
 }
 
 /* Box sizing rules */
