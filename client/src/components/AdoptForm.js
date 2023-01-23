@@ -53,74 +53,37 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick}) => {
     };
 
 return (
-    // <Popup open={showAdoptForm} position="right center" modal>
-    //     <form onSubmit={handleAdoptionForm}>
-    //         <label htmlFor='firstName'>First Name:</label>
-    //         <input type='text' name='firstName' value={firstName} onChange={handleFirstName}/>
+    <Popup open={showAdoptForm} modal nested>
+        {close => (
+            <div className="modal">
+                <button className="close" onClick={handleAdoptMeClick} >&times;</button>
+            <div className="header">
+                <h4>`Adopt pet.name`</h4>
+            </div>
+                <div className="content">
+                    <form onSubmit={handleAdoptionForm}>
+                    <label htmlFor='firstName'>First Name:</label>
+                        <input type='text' name='firstName' value={firstName} onChange={handleFirstName}/>
 
-    //         <label htmlFor='lastName'>Last Name:</label>
-    //         <input type='text' name='lastName' value={lastName} onChange={handleLastName}/>
+                        <label htmlFor='lastName'>Last Name:</label>
+                        <input type='text' name='lastName' value={lastName} onChange={handleLastName}/>
 
-    //         <label htmlFor='phone'>Phone:</label>
-    //         <input type='text' name='phone' value={phone} onChange={handlePhone}/>
+                        <label htmlFor='phone'>Phone:</label>
+                        <input type='text' name='phone' value={phone} onChange={handlePhone}/>
 
-    //         <label htmlFor='chosenAnimal'>Adopting:</label>
-    //         <input type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal}/>
+                        <label htmlFor='chosenAnimal'>Adopting:</label>
+                        <input type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal}/>
 
-    //         <label htmlFor='personalStatement'>Why do you want to adopt?</label>
-    //         <input type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement}/>
-
-    //         <input type='submit' name='submit' value='Save'></input>
-
-    //     </form>
-    // </Popup>
-    <Popup
-    open={showAdoptForm}
-    modal
-    nested
-  >
-    {close => (
-      <div className="modal">
-        <button className="close" onClick={handleAdoptMeClick} >&times;</button>
-        <div className="header">
-            <h4>`Adopt pet.name`</h4>
-        </div>
-        <div className="content">
-            <form onSubmit={handleAdoptionForm}>
-            <label htmlFor='firstName'>First Name:</label>
-                <input type='text' name='firstName' value={firstName} onChange={handleFirstName}/>
-
-                <label htmlFor='lastName'>Last Name:</label>
-                <input type='text' name='lastName' value={lastName} onChange={handleLastName}/>
-
-                <label htmlFor='phone'>Phone:</label>
-                <input type='text' name='phone' value={phone} onChange={handlePhone}/>
-
-                <label htmlFor='chosenAnimal'>Adopting:</label>
-                <input type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal}/>
-
-                <label htmlFor='personalStatement'>Why do you want to adopt?</label>
-                <input type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement}/>
-                <input type='submit' name='submit' value='Submit'></input>
-            </form>
-        </div>
-        <div className="actions">
-          <Popup
-            // trigger={<button className="button"></button>}
-            position="top center"
-            nested
-          >
-            <span>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-              magni omnis delectus nemo, maxime molestiae dolorem numquam
-              mollitia, voluptate ea, accusamus excepturi deleniti ratione
-              sapiente! Laudantium, aperiam doloribus. Odit, aut.
-            </span>
-          </Popup>
-        </div>
-      </div>
-    )}
-  </Popup>
+                        <label htmlFor='personalStatement'>Why do you want to adopt?</label>
+                        <input type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement}/>
+                        <input type='submit' name='submit' value='Submit'></input>
+                    </form>
+                </div>
+            <div className="actions">
+                </div>
+                </div>
+        )}
+    </Popup>
 )
 }
 
