@@ -43,11 +43,20 @@ const DogsList = ({ dogs, handleAdoptMeClick}) => {
     })
 
     const handleNext = () => {
-        setCount(count+1)
+        if (dogs.length+1 > count){
+            setCount(count+1)
+        } if (dogs.length-1 <= count) {
+            setCount(0);
+        }
+
     }
 
     const handlePrevious = () => {
-        setCount(count-1)
+        if (count > 0){
+            setCount(count-1)
+        } else {
+            setCount(dogs.length-1);
+        }
     }
 
     return (
