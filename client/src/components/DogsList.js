@@ -35,15 +35,15 @@ const DogsList = ({ dogs, handleAdoptMeClick}) => {
     const left = require('../leftchevron.png');
     const right = require('../rightchevron.png');
 
-    const oneDog = dogs.slice(count, count+1);
+
+    const updatedDogs = dogs.filter(dog => !dog.adopted);
+
+    const oneDog = updatedDogs.slice(count, count+1);
     const dogData = oneDog.map((dog) => {
         return <li>
                     <DogElement dog={ dog } key={ dog._id } handleAdoptMeClick={handleAdoptMeClick}/>
                 </li>
     })
-
-
-    const updatedDogs = dogs.filter(dog => !dog.adopted);
 
     const handleNext = () => {
         if (updatedDogs.length+1 > count){
