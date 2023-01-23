@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const AdminCat = ({cat, updateCat, handleCatDelete}) => {
     const [name, setName] = useState(cat.name)
@@ -23,6 +23,22 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
         setImage(event.target.value)
     }
 
+
+        // adopt adn un-adopt
+        const [adoptClass, setAdoptClass] = useState('')
+        const [adoptButtonText, setAdoptButtonText] = useState('')
+    
+        useEffect(() => {
+            if (cat.adopted){
+              setAdoptClass('This cat has been adopted')
+              setAdoptButtonText('Un-adopt')
+            } else{
+              setAdoptClass('This cat is still looking for a home')
+              setAdoptButtonText('Adopted')
+            }
+        }, [cat.adopted])
+
+
     const [editAnimal, setEditAnimal] = useState(false)
 // time declaration
     const event = new Date;
@@ -36,7 +52,7 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
           age: cat.age,
           about: cat.about,
           image: cat.image,
-        adopted: event.toLocaleDateString('en-UK', options)
+        adopted: !cat.adopted
         
         }, cat._id)
       }
@@ -74,9 +90,9 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
             <p>Breed: { cat.breed }</p>
             <p>Age: { cat.age }</p>
             <p>About: { cat.about }</p>
-            <p>cat was adopted on: {cat.adopted}</p>
+            <p>cat was adopted on: {adoptClass}</p>
        <button onClick={editExistingCat}> Cat update</button>
-        <button onClick={adoptCat}> Cat adopted</button>  
+        <button onClick={adoptCat}> {adoptButtonText}</button>  
         <button onClick={deleteCat}>Delete</button>
          </li>
       )
