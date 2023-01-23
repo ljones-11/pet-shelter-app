@@ -46,7 +46,7 @@ return (
 
     <div>
         <CatsList cats={cats} handleAdoptMeClick={handleAdoptMeClick}/>
-        <AdoptForm handleAdoption={handleAdoption}/>
+        {showAdoptForm ? <AdoptForm handleAdoption={handleAdoption}/> : null}
     </div>
 )
 

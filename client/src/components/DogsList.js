@@ -1,5 +1,26 @@
 import React, { useState } from "react";
 import DogElement from "./DogElement";
+import styled from "styled-components";
+
+const Section = styled.section`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+`
+const NextPrev = styled.button`
+    background-color: transparent;
+    border:none;
+    width: 50px;
+
+`
+
+const ULFix = styled.ul`
+    list-style: none;
+    display: grid;
+    justify-content: center;
+`
 
 const DogsList = ({ dogs, handleAdoptMeClick }) => {
     const [count, setCount] = useState(0);
@@ -20,13 +41,13 @@ const DogsList = ({ dogs, handleAdoptMeClick }) => {
     }
 
     return (
-        <div>
-            <ul>
-                {dogData}
-            </ul>
-            <button onClick={handlePrevious}>Previous</button>
-            <button onClick={handleNext}>Next</button>
-        </div>
+        <Section>
+            <NextPrev onClick={handlePrevious}><span>⬅️</span></NextPrev>
+                <ULFix>
+                    {dogData}
+                </ULFix>
+            <NextPrev onClick={handleNext}><span>➡️</span></NextPrev>
+        </Section>
     )
 }
 
