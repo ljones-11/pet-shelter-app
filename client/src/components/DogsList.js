@@ -42,10 +42,13 @@ const DogsList = ({ dogs, handleAdoptMeClick}) => {
                 </li>
     })
 
+
+    const updatedDogs = dogs.filter(dog => !dog.adopted);
+
     const handleNext = () => {
-        if (dogs.length+1 > count){
+        if (updatedDogs.length+1 > count){
             setCount(count+1)
-        } if (dogs.length-1 <= count) {
+        } if (updatedDogs.length-1 <= count) {
             setCount(0);
         }
 

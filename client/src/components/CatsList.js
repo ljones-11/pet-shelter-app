@@ -44,10 +44,12 @@ const CatsList = ({cats, handleAdoptMeClick}) => {
             </li>
     })
 
+    const updatedCats = cats.filter(cat => !cat.adopted);
+
     const handleNext = () => {
-        if (cats.length+1 > count){
+        if (updatedCats.length+1 > count){
             setCount(count+1)
-        } if (cats.length-1 <= count) {
+        } if (updatedCats.length-1 <= count) {
             setCount(0);
         }
 
