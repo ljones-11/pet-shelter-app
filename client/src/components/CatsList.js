@@ -5,25 +5,36 @@ import styled from "styled-components";
 const Section = styled.section`
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    
-
+    align-items: center;
+    justify-content:center;
 `
 const NextPrev = styled.button`
     background-color: transparent;
     border:none;
-    width: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 
+`
+
+const ChevFix = styled.img`
+    min-height:40px;
+    min-width: 40px;
 `
 
 const ULFix = styled.ul`
     list-style: none;
     display: grid;
     justify-content:center;
+    padding-left:0;
 `
+
 
 const CatsList = ({cats, handleAdoptMeClick}) => {
     const [count, setCount] = useState(0);
+
+    const left = require('../leftchevron.png');
+    const right = require('../rightchevron.png');
 
     const oneCat = cats.slice(count, count+1);
 
@@ -43,11 +54,11 @@ const CatsList = ({cats, handleAdoptMeClick}) => {
 
     return (
         <Section>
-            <NextPrev onClick={handlePrevious}><span>⬅️</span></NextPrev>
+            <NextPrev onClick={handlePrevious}><ChevFix src={left}></ChevFix></NextPrev>
                 <ULFix>
                     {catData}
                 </ULFix>
-            <NextPrev onClick={handleNext}><span>➡️</span></NextPrev>
+            <NextPrev onClick={handleNext}><ChevFix src={right}></ChevFix></NextPrev>
         </Section>
     )
 
