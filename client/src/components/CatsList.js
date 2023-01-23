@@ -36,7 +36,9 @@ const CatsList = ({cats, handleAdoptMeClick}) => {
     const left = require('../leftchevron.png');
     const right = require('../rightchevron.png');
 
-    const oneCat = cats.slice(count, count+1);
+    const updatedCats = cats.filter(cat => !cat.adopted);
+
+    const oneCat = updatedCats.slice(count, count+1);
 
     const catData = oneCat.map((cat) => {
         return <li>
@@ -44,7 +46,7 @@ const CatsList = ({cats, handleAdoptMeClick}) => {
             </li>
     })
 
-    const updatedCats = cats.filter(cat => !cat.adopted);
+
 
     const handleNext = () => {
         if (updatedCats.length+1 > count){
