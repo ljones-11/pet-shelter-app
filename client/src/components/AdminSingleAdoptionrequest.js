@@ -1,16 +1,29 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 
 const AdminSingleAdoptionrequest = ({singleRequest, handleArchive}) => {
 
     const event = new Date;
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-const handleClick = () => {
+    const [requestArchivedClass, setRequestArchivedClass] = useState('')
+    const [archiveButtonText, setArchiveButtonText] = useState('')
+
+    useEffect(() => {
+        if (singleRequest.archived){
+            setRequestArchivedClass('This has been archived')
+            setArchiveButtonText('Unarchive')
+        } else{
+            setRequestArchivedClass('This request is still open')
+            setArchiveButtonText('Archive Request')
+        }
+    }, [singleRequest.archived])
+
+    const handleClick = () => {
     handleArchive({
-        archivedOn: event.toLocaleDateString('en-UK', options)   
+        archived: !singleRequest.archived
     }, singleRequest._id)
 }
-
+// !requestArchivedClass  
   return (
     <div>
            <li key={singleRequest.id}> First and Last Name: {singleRequest.firstName} {singleRequest.lastName} <br/>
@@ -18,8 +31,8 @@ const handleClick = () => {
                   Chosen Animal: {singleRequest.chosenAnimal}  <br/>
                   Personal Statement:{singleRequest.personalStatement}
                   <br/>
-                  This Request was archived on: {singleRequest.archivedOn}
-                  <button onClick={handleClick}>Archive</button>
+                  This Request was archived on: {singleRequest.archived} {requestArchivedClass} {event.toLocaleDateString('en-UK', options)} 
+                  <button onClick={handleClick}>{archiveButtonText}</button>
                   </li>
       
     </div>
