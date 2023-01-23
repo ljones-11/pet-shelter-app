@@ -1,7 +1,9 @@
 import { useState } from "react";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 
-const AdoptForm = ({handleAdoption}) => {
+const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick}) => {
 
     const[firstName, setFirstName] = useState('')
     const[lastName, setLastName] = useState('')
@@ -51,25 +53,46 @@ const AdoptForm = ({handleAdoption}) => {
     };
 
 return (
-    <form onSubmit={handleAdoptionForm}>
-        <label htmlFor='firstName'>First Name:</label>
-        <input type='text' name='firstName' value={firstName} onChange={handleFirstName}/>
-
-        <label htmlFor='lastName'>Last Name:</label>
-        <input type='text' name='lastName' value={lastName} onChange={handleLastName}/>
-
-        <label htmlFor='phone'>Phone:</label>
-        <input type='text' name='phone' value={phone} onChange={handlePhone}/>
-
-        <label htmlFor='chosenAnimal'>Adopting:</label>
-        <input type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal}/>
-
-        <label htmlFor='personalStatement'>Why do you want to adopt?</label>
-        <input type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement}/>
-
-        <input type='submit' name='submit' value='Save'></input>
-
-    </form>
+    <Popup open={showAdoptForm} modal nested>
+        {close => (
+            <div className="modal">
+                <button className="close" onClick={handleAdoptMeClick} >&times;</button>
+            <div className="header">
+                <h4>`Adopt pet.name`</h4>
+            </div>
+                <div className="content">
+                    <form onSubmit={handleAdoptionForm} className='form'>
+                        <div>
+                            <label htmlFor='firstName'>First Name:</label>
+                            <input type='text' name='firstName' value={firstName} onChange={handleFirstName}/>
+                        </div>
+                        <div>
+                            <label htmlFor='lastName'>Last Name:</label>
+                            <input type='text' name='lastName' value={lastName} onChange={handleLastName}/>
+                        </div>
+                        <div>
+                            <label htmlFor='phone'>Phone:</label>
+                            <input type='text' name='phone' value={phone} onChange={handlePhone}/>
+                        </div>
+                        <div>
+                            <label htmlFor='chosenAnimal'>Adopting:</label>
+                            <input type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal}/>
+                        </div>
+                        <div>
+                            <label htmlFor='personalStatement'>Why do you want to adopt?</label>
+                            <input type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement}/>
+                        </div>
+                        <div>
+                            <input type='submit' name='submit' value='Submit'></input>
+                        </div>
+                       
+                    </form>
+                </div>
+            <div className="actions">
+                </div>
+                </div>
+        )}
+    </Popup>
 )
 }
 

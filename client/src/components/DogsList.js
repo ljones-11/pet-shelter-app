@@ -29,7 +29,7 @@ const ULFix = styled.ul`
     padding-left:0;
 `
 
-const DogsList = ({ dogs, handleAdoptMeClick }) => {
+const DogsList = ({ dogs, handleAdoptMeClick}) => {
     const [count, setCount] = useState(0);
 
     const left = require('../leftchevron.png');
