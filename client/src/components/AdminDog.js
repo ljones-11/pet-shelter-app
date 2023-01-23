@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 
 const AdminDog = ({dog, updateDog, handleDogDelete}) => {
@@ -27,12 +27,28 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
     }
 
     const [editAnimal, setEditAnimal] = useState(false)
+
+    // adopt adn un-adopt
+    const [adoptClass, setAdoptClass] = useState('')
+    const [adoptButtonText, setAdoptButtonText] = useState('')
+
+    useEffect(() => {
+      console.log('dog adopted:', dog.adopted);
+        if (dog.adopted){
+          setAdoptClass('This dog has been adopted')
+          setAdoptButtonText('Un-adopt')
+        } else{
+          setAdoptClass('This dog is still looking for a home')
+          setAdoptButtonText('Adopted')
+        }
+    }, [dog.adopted])
+    
 // time declaration
     const event = new Date;
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
     const adoptDog = () => {
-        console.log('button is clicked');
+        console.log('button is clicked with adopted: ', !dog.adopted  );
         updateDog({
         //   _id: dog._id,
           name: dog.name,
@@ -40,7 +56,7 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
           age: dog.age,
           about: dog.about,
         //   image: dog.image,
-            adopted: event.toLocaleDateString('en-UK', options)   
+            adopted: !dog.adopted  
         }, dog._id)
       }
   const handleFormSubmit = (event) => {
@@ -74,9 +90,9 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
             <p>Breed: { dog.breed }</p>
             <p>Age: { dog.age }</p>
             <p>About: { dog.about }</p>
-            <p>Dog was adopted on: {dog.adopted}</p>
+            <p>Dog was adopted on: {adoptClass}</p>
        <button onClick={editExistingDog}> Dog update</button>
-        <button onClick={adoptDog}> Dog adopted</button> 
+        <button onClick={adoptDog}> {adoptButtonText}</button> 
         <button onClick={deleteDog}>Delete</button>  
         </li>
       )

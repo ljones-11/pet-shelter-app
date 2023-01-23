@@ -8,6 +8,7 @@ const AdminContainer = () => {
 // url used for id PUT
   const dogURL = 'http://localhost:9000/api/dogs/'
   const catURL ='http://localhost:9000/api/cats/'
+  const adoptionURL = 'http://localhost:9000/api/adoptions/'
 
     const [dogs, setDogs] = useState([])
     const [cats, setCats] = useState([])
@@ -89,14 +90,24 @@ const AdminContainer = () => {
     const handleDogDelete = (dogId) => {
       return fetch ( dogURL + dogId,{
         method: 'DELETE'
+
       })
       .then(() => fetchDogs())
+    }
+
+    const handleAdoptionArchive = (adoptionRequestData, adoptionRequestID) => {
+      return fetch( adoptionURL + adoptionRequestID,{
+        method: 'PUT',
+        body: JSON.stringify(adoptionRequestData),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(() => fetchAdoptionRequests())
     }
 
   return (
     <div>
       <AdminForm onCatSubmit={handleCatSubmit} onDogSubmit={handleDogSubmit}/>
-      <AdminAdoptionRequests adoptionRequests={adoptionRequests}/>
+      <AdminAdoptionRequests adoptionRequests={adoptionRequests} handleArchive = {handleAdoptionArchive}/>
       <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate} handleDogDelete={handleDogDelete} handleCatDelete={handleCatDelete}/>
     </div>
   )
