@@ -1,20 +1,21 @@
 import React from 'react'
+import AdminSingleAdoptionrequest from './AdminSingleAdoptionrequest'
 
-const AdminAdoptionRequests = ({adoptionRequests}) => {
+const AdminAdoptionRequests = ({adoptionRequests, handleArchive}) => {
+  const singleRequestNodes = adoptionRequests.map(singleRequest => {
+    return <AdminSingleAdoptionrequest
+    key = {singleRequest.id}
+    singleRequest = {singleRequest}
+    handleArchive = {handleArchive}
+    />
+
+  })
   return (
     <div>
         <h2>Adoption Requests</h2>
-        {adoptionRequests.map(singleRequest => {
-            return(
-                <li key={singleRequest.id}> First and Last Name: {singleRequest.firstName} {singleRequest.lastName} <br/>
-                 Telephone: {singleRequest.phone} <br/>
-                  Chosen Animal: {singleRequest.chosenAnimal}  <br/>
-                  Personal Statement:{singleRequest.personalStatement}
-                  </li>
-            )
-        })}
+        {singleRequestNodes}
+             
     </div>
   )
 }
-
 export default AdminAdoptionRequests
