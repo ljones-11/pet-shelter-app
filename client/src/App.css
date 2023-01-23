@@ -112,11 +112,15 @@ select {
 }
 
 .modal {
+  font-family: sans-serif;
   font-size: 12px;
+  color: #434343;
+  /* background: linear-gradient(40deg, #fd5564 5%, #ffffff 90%); */
+  
 }
 .modal > .header {
   width: 100%;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #434343;
   font-size: 18px;
   text-align: center;
   padding: 5px;
@@ -124,13 +128,15 @@ select {
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
+  display:flex;
+  justify-content:flex-end;
 }
-.modal > .actions {
-  width: 100%;
-  padding: 10px 5px;
-  margin: auto;
-  text-align: center;
+.modal > .form {
+  display: flex;
+  justify-content: center;
 }
+
+
 .modal > .close {
   cursor: pointer;
   position: absolute;
@@ -144,3 +150,5 @@ select {
   border-radius: 18px;
   border: 1px solid #cfcece;
 }
+
+

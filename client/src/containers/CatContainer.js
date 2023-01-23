@@ -36,17 +36,14 @@ const handleAdoption = newAdoption => {
   }
 
   const handleAdoptMeClick = () => {
-        
-    if (showAdoptForm === false) {
-        setShowAdoptForm(!showAdoptForm)
-    } 
-  }
+    setShowAdoptForm(!showAdoptForm)
+} 
 
 return (
 
     <div>
         <CatsList cats={cats} handleAdoptMeClick={handleAdoptMeClick}/>
-        {showAdoptForm ? <AdoptForm handleAdoption={handleAdoption}/> : null}
+        <AdoptForm handleAdoption={handleAdoption} showAdoptForm={showAdoptForm} handleAdoptMeClick={handleAdoptMeClick}/>
     </div>
 )
 
