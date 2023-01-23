@@ -6,8 +6,6 @@ const AdminAnimals = ({dogs, cats, updateDog, updateCat, handleDogDelete, handle
 
   // states for dropdown menu
   const [chosenCategory, setChosenCategory] = useState('pick category')
-  // const [allDogs, setAllDogsVisible] = useState(false)
-  // const [allCats, setAllCatsVisible] = useState(false)
   const [dataOfAnimalsToDisplay, setDataOfAnimalsToDisplay] = useState([]);
   const [animalTypeToDisplay, setAnimalTypeToDisplay] = useState('');
 
@@ -17,8 +15,7 @@ const AdminAnimals = ({dogs, cats, updateDog, updateCat, handleDogDelete, handle
     key= {dog._id} 
     dog={dog}  
     updateDog={updateDog}
-    handleDogDelete={handleDogDelete}
-    
+    handleDogDelete={handleDogDelete}  
     />    
   }
 
@@ -40,13 +37,7 @@ const AdminAnimals = ({dogs, cats, updateDog, updateCat, handleDogDelete, handle
 
   // when option is selected the states go to true so they can be rendered
   useEffect(() => {
-    // chosenCategory ==="allDogs"
-    // ? setAllDogsVisible(true)
-    // : setAllDogsVisible(false);
-    // chosenCategory ==="allCats"
-    // ? setAllCatsVisible(true)
-    // : setAllCatsVisible(false)
-    
+
     // all dogs
     if (chosenCategory === 'allDogs') {
       setAnimalTypeToDisplay('dog');
@@ -97,14 +88,10 @@ const AdminAnimals = ({dogs, cats, updateDog, updateCat, handleDogDelete, handle
         <option value='allAdoptedCats'>All Adopted Cats</option>
         <option value='allNotAdoptedCats'>All Not adopted Cats</option>
 
-        {/* <option value={chosenCategory}>Unadopted cats</option> */}
-        {/* <option value={chosenCategory}>Adopted Cats</option> */}
-
       </select>
         <div>
           {nodesToDisplay}
-          {/* {allDogs && [dogNodes]}
-          {allCats && [catNodes]} */}
+
         </div>
     </div>
   )
