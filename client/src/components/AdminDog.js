@@ -33,6 +33,7 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
     const [adoptButtonText, setAdoptButtonText] = useState('')
 
     useEffect(() => {
+      console.log('dog adopted:', dog.adopted);
         if (dog.adopted){
           setAdoptClass('This dog has been adopted')
           setAdoptButtonText('Un-adopt')
@@ -47,7 +48,7 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
     const adoptDog = () => {
-        console.log('button is clicked');
+        console.log('button is clicked with adopted: ', !dog.adopted  );
         updateDog({
         //   _id: dog._id,
           name: dog.name,
