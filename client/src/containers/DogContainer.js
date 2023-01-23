@@ -35,16 +35,14 @@ const DogContainer = () => {
       }
 
       const handleAdoptMeClick = () => {
-        
-        if (showAdoptForm === false) {
             setShowAdoptForm(!showAdoptForm)
         } 
-      }
+      
       
     return (
         <div>
         <DogsList dogs={dogs} handleAdoptMeClick={handleAdoptMeClick}/>
-        {showAdoptForm ? <AdoptForm handleAdoption={handleAdoption} showAdoptForm={showAdoptForm}/> : null}
+        <AdoptForm handleAdoption={handleAdoption} showAdoptForm={showAdoptForm} handleAdoptMeClick={handleAdoptMeClick}/>
         </div>
     )
 }

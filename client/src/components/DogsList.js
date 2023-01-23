@@ -22,7 +22,7 @@ const ULFix = styled.ul`
     justify-content: center;
 `
 
-const DogsList = ({ dogs, handleAdoptMeClick }) => {
+const DogsList = ({ dogs, handleAdoptMeClick}) => {
     const [count, setCount] = useState(0);
 
     const oneDog = dogs.slice(count, count+1);
