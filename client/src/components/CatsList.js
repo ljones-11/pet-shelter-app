@@ -1,5 +1,26 @@
 import CatElement from "./CatElement";
 import { useState } from "react";
+import styled from "styled-components";
+
+const Section = styled.section`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+`
+const NextPrev = styled.button`
+    background-color: transparent;
+    border:none;
+    width: 50px;
+
+`
+
+const ULFix = styled.ul`
+    list-style: none;
+    display: grid;
+    justify-content:center;
+`
 
 const CatsList = ({cats, handleAdoptMeClick}) => {
     const [count, setCount] = useState(0);
@@ -21,13 +42,13 @@ const CatsList = ({cats, handleAdoptMeClick}) => {
     }
 
     return (
-        <div>
-            <ul>
-            {catData}
-            </ul>
-            <button onClick={handlePrevious}>Previous</button>
-            <button onClick={handleNext}>Next</button>
-        </div>
+        <Section>
+            <NextPrev onClick={handlePrevious}><span>⬅️</span></NextPrev>
+                <ULFix>
+                    {catData}
+                </ULFix>
+            <NextPrev onClick={handleNext}><span>➡️</span></NextPrev>
+        </Section>
     )
 
 }
