@@ -58,7 +58,7 @@ const DogsList = ({ dogs, handleAdoptMeClick}) => {
         if (count > 0){
             setCount(count-1)
         } else {
-            setCount(dogs.length-1);
+            setCount(updatedDogs.length-1);
         }
     }
 

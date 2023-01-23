@@ -59,7 +59,7 @@ const CatsList = ({cats, handleAdoptMeClick}) => {
         if (count > 0){
             setCount(count-1)
         } else {
-            setCount(cats.length-1);
+            setCount(updatedCats.length-1);
         }
     }
 
