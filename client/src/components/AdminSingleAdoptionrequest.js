@@ -31,7 +31,7 @@ const AdminSingleAdoptionrequest = ({singleRequest, handleArchive}) => {
                   Chosen Animal: {singleRequest.chosenAnimal}  <br/>
                   Personal Statement:{singleRequest.personalStatement}
                   <br/>
-                  This Request was archived on: {singleRequest.archived} {requestArchivedClass} {event.toLocaleDateString('en-UK', options)} 
+                  This Request was archived on: {singleRequest.archived} {requestArchivedClass}  
                   <button onClick={handleClick}>{archiveButtonText}</button>
                   </li>
       
@@ -40,3 +40,5 @@ const AdminSingleAdoptionrequest = ({singleRequest, handleArchive}) => {
 }
 
 export default AdminSingleAdoptionrequest
+
+// {event.toLocaleDateString('en-UK', options)}
