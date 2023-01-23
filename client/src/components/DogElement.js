@@ -11,7 +11,7 @@ const Card = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background:linear-gradient(40deg, rgba(247,61,193,1) 50%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(40deg, rgba(253,85,100,1) 50%, rgba(252,176,69,1) 100%);
     width: 320px;
     height: 400px;
     border-radius: 5%;
@@ -25,6 +25,7 @@ const Name = styled.h4`
 `
 const Image = styled.img`
     max-width: 80%;
+    max-height: 50%;
 `
 
 const DogElement = ({dog, handleAdoptMeClick}) => {
