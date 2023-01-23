@@ -1,7 +1,9 @@
 import { useState } from "react";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 
-const AdoptForm = ({handleAdoption}) => {
+const AdoptForm = ({handleAdoption, showAdoptForm}) => {
 
     const[firstName, setFirstName] = useState('')
     const[lastName, setLastName] = useState('')
@@ -51,25 +53,27 @@ const AdoptForm = ({handleAdoption}) => {
     };
 
 return (
-    <form onSubmit={handleAdoptionForm}>
-        <label htmlFor='firstName'>First Name:</label>
-        <input type='text' name='firstName' value={firstName} onChange={handleFirstName}/>
+    <Popup open={showAdoptForm} position="right center">
+        <form onSubmit={handleAdoptionForm}>
+            <label htmlFor='firstName'>First Name:</label>
+            <input type='text' name='firstName' value={firstName} onChange={handleFirstName}/>
 
-        <label htmlFor='lastName'>Last Name:</label>
-        <input type='text' name='lastName' value={lastName} onChange={handleLastName}/>
+            <label htmlFor='lastName'>Last Name:</label>
+            <input type='text' name='lastName' value={lastName} onChange={handleLastName}/>
 
-        <label htmlFor='phone'>Phone:</label>
-        <input type='text' name='phone' value={phone} onChange={handlePhone}/>
+            <label htmlFor='phone'>Phone:</label>
+            <input type='text' name='phone' value={phone} onChange={handlePhone}/>
 
-        <label htmlFor='chosenAnimal'>Adopting:</label>
-        <input type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal}/>
+            <label htmlFor='chosenAnimal'>Adopting:</label>
+            <input type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal}/>
 
-        <label htmlFor='personalStatement'>Why do you want to adopt?</label>
-        <input type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement}/>
+            <label htmlFor='personalStatement'>Why do you want to adopt?</label>
+            <input type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement}/>
 
-        <input type='submit' name='submit' value='Save'></input>
+            <input type='submit' name='submit' value='Save'></input>
 
-    </form>
+        </form>
+    </Popup>
 )
 }
 

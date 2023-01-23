@@ -44,7 +44,7 @@ const DogContainer = () => {
     return (
         <div>
         <DogsList dogs={dogs} handleAdoptMeClick={handleAdoptMeClick}/>
-        {showAdoptForm ? <AdoptForm handleAdoption={handleAdoption}/> : null}
+        {showAdoptForm ? <AdoptForm handleAdoption={handleAdoption} showAdoptForm={showAdoptForm}/> : null}
         </div>
     )
 }

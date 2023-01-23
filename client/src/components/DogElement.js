@@ -31,6 +31,7 @@ const Image = styled.img`
 const DogElement = ({dog, handleAdoptMeClick}) => {
 
     const [favourites, setFavourites] = useState([])
+    const [adoptFormOpen, setAdoptFormOpen] = useState(false)
     
     useEffect(()=> {
         handleFavourites();
