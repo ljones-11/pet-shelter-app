@@ -18,6 +18,10 @@ const ListFix = styled.ul`
 
 const NoStretchSelect = styled.select`
   max-width: 373px;
+  background-color: #fd5564;
+  color: #ffffff;
+  border-color: transparent;
+  border-radius: 6px;
 `
 const AdminAnimals = ({dogs, cats, updateDog, updateCat, handleDogDelete, handleCatDelete}) => {
 

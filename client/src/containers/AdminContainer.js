@@ -9,6 +9,8 @@ const Div = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: #434343;
+  font-family: 'proxima-nova';
 `
 
 const AdminStyledLeft = styled.div`

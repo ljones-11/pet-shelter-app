@@ -13,8 +13,12 @@ const ButtonDiv = styled.div`
     flex-direction: column;
 `
 
-const Button = styled.button`
+const Buttons = styled.button`
     max-width: 150px;
+    background-color: #fd5564;
+    color: #ffffff;
+    border-color: transparent;
+    border-radius: 6px;
 `
 
 const AdminSingleAdoptionrequest = ({singleRequest, handleArchive}) => {
@@ -51,7 +55,7 @@ const AdminSingleAdoptionrequest = ({singleRequest, handleArchive}) => {
                   <br/>
                   <strong>This Request was archived on:</strong> {singleRequest.archived} {requestArchivedClass}  
                 <ButtonDiv>
-                  <Button onClick={handleClick}>{archiveButtonText}</Button>
+                  <Buttons onClick={handleClick}>{archiveButtonText}</Buttons>
                 </ButtonDiv>
                   </li>
         </FixDiv>

@@ -18,8 +18,17 @@ const ListFix = styled.ul`
   padding: 0;
 `
 
-
-
+const Selecc = styled.select`
+  max-width: 373px;
+  background-color: #fd5564;
+  color: #ffffff;
+  border-color: transparent;
+  border-radius: 6px;
+`
+const BorderBox = styled.div`
+  border: solid;
+  text-align: center;
+`
 
 const AdminAdoptionRequests = ({adoptionRequests, handleArchive}) => {
 
@@ -82,19 +91,20 @@ const AdminAdoptionRequests = ({adoptionRequests, handleArchive}) => {
 
   return (
     <StRequests>
+      <BorderBox>
         <h2>Adoption Requests</h2>
-        <h3>the total of Archived requests is {archivedCounter}</h3>
-        <h3>the total of open requests is {openCounter}</h3>
-        
+        <h4>Total archived requests: {archivedCounter}</h4>
+        <h4>Total open requests: {openCounter}</h4>
+      </BorderBox>
         <RequestsView>
           <h2>Pick what type of requests to view</h2>
 
-          <select value={chosenCategory} onChange={handleChange}>
+          <Selecc value={chosenCategory} onChange={handleChange}>
           <option value="selectCategory" >Select what you want to see</option>
           <option value='allRequests'>All Requests</option>
           <option value='openRequests'>Open Requests</option>
           <option value='archivedRequests'>ArchivedRequests</option>
-          </select>
+          </Selecc>
           <ListFix>
             {nodesToDisplay}
           </ListFix>

@@ -6,13 +6,22 @@ const StyledForm = styled.form`
     flex-direction: column;
     max-width: 373px;
     margin-left: 50px;
+
 `
 
 const Selecc = styled.select`
     max-width: 190px;
+    background-color: #fd5564;
+    color: #ffffff;
+    border-color: transparent;
+    border-radius: 6px;
 `
 const StInput = styled.input`
     max-width: 190px;
+    background-color: #fd5564;
+    color: #ffffff;
+    border-color: transparent;
+    border-radius: 6px;
 `
 
 const BottomForm = styled.div`
@@ -21,7 +30,12 @@ const BottomForm = styled.div`
     justify-content: space-between;
     max-width: 373px;
 `
+const Buttons = styled.button`
+    /* padding:0px 10px;
+    margin: 1em; */
 
+
+`
 const AdminForm = ({onCatSubmit, onDogSubmit}) => {
 
     const [name, setName] = useState('')

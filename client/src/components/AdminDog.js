@@ -1,5 +1,30 @@
 import {useState, useEffect} from 'react'
+import styled from 'styled-components'
 
+const Buttons = styled.button`
+  padding:0px 5px;
+  margin: 0.5em;
+  background-color: #fd5564;
+  color: #ffffff;
+  border-color: transparent;
+  border-radius: 6px;
+
+`
+const StInput = styled.input`
+  padding:0px 5px;
+  margin-top: 10px;
+  background-color: #fd5564;
+  color: #ffffff;
+  border-color: transparent;
+  border-radius: 6px;
+  max-width: 127px;
+`
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 373px;
+
+`
 
 const AdminDog = ({dog, updateDog, handleDogDelete}) => {
 
@@ -91,14 +116,14 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
             <p><strong>Age:</strong> { dog.age }</p>
             <p><strong>About:</strong> { dog.about }</p>
             <p><strong>Dog adopted on:</strong> {adoptClass}</p>
-       <button onClick={editExistingDog}> Dog update</button>
-        <button onClick={adoptDog}> {adoptButtonText}</button> 
-        <button onClick={deleteDog}>Delete</button>  
+       <Buttons onClick={editExistingDog}> Dog update</Buttons>
+        <Buttons onClick={adoptDog}> {adoptButtonText}</Buttons> 
+        <Buttons onClick={deleteDog}>Delete</Buttons>  
         </li>
       )
       // if editanimal is set to true it will open this form 
       : (
-        <form onSubmit={handleFormSubmit}>
+        <StyledForm onSubmit={handleFormSubmit}>
           <h3>Update Form</h3>
           <label htmlFor='name'><strong>Name:</strong></label>
         <input type='text' name='name' value={name} onChange={handleNameChange}/>
@@ -114,8 +139,8 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
         
         <label htmlFor='image'><strong>Image:</strong></label>
         <input type='text' name='image' value={image} onChange={handleImageChange}/>
-        <input type='submit' name='submit' value='Save' />
-   </form>
+        <StInput type='submit' name='submit' value='Save' />
+   </StyledForm>
       )}
      
     </div>
