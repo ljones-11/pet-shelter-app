@@ -43,8 +43,18 @@ const DogContainer = () => {
       
     return (
         <div>
-            <DogsList dogs={dogs} handleAdoptMeClick={handleAdoptMeClick}/>
-            {dogToAdopt ? <AdoptForm handleAdoption={handleAdoption} showAdoptForm={showAdoptForm} handleAdoptMeClick={handleAdoptMeClick} pet={dogToAdopt}/> : null}
+            <DogsList 
+                dogs={dogs} 
+                handleAdoptMeClick={handleAdoptMeClick}
+            />
+            {dogToAdopt ? 
+            <AdoptForm 
+                handleAdoption={handleAdoption}
+                showAdoptForm={showAdoptForm}
+                handleAdoptMeClick={handleAdoptMeClick}
+                pet={dogToAdopt}
+            /> 
+            : null}
         </div>
     )
 }

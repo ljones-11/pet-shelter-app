@@ -4,6 +4,7 @@ import 'reactjs-popup/dist/index.css';
 import Swal from 'sweetalert2'
 
 
+
 const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => {
 
     const[firstName, setFirstName] = useState('')
@@ -90,7 +91,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
     }
 
 return (
-    <Popup open={showAdoptForm} modal nested contentStyle={{ width: '30%'}}>
+    <Popup open={showAdoptForm} modal nested contentStyle={{ width: '320px', height: '380px', borderRadius: '5%'}} className='popup-content'>
         {close => (
             <div className="modal">
                 <button className="close" onClick={handleAdoptMeClick} >&times;</button>
@@ -100,34 +101,91 @@ return (
                 <div className="content">
                     <form onSubmit={handleAdoptionForm} className='form'>
                         <div>
-                            <label className='form-label' htmlFor='firstName'>First Name:</label>
-                            <input className='form-input' type='text' name='firstName' value={firstName} onChange={handleFirstName} required/>
+                            <label 
+                                className='form-label' 
+                                htmlFor='firstName'>
+                                First Name:
+                            </label>
+                            <input 
+                                className='form-input' 
+                                type='text' 
+                                name='firstName' 
+                                value={firstName} 
+                                onChange={handleFirstName} 
+                                required
+                            />
                         </div>
                         <div>
-                            <label className='form-label' htmlFor='lastName'>Last Name:</label>
-                            <input  className='form-input'type='text' name='lastName' value={lastName} onChange={handleLastName} required/>
+                            <label 
+                                className='form-label' 
+                                htmlFor='lastName'>
+                                Last Name:
+                            </label>
+                            <input  
+                                className='form-input'
+                                type='text' 
+                                name='lastName' 
+                                value={lastName} 
+                                onChange={handleLastName} 
+                                required
+                            />
                         </div>
                         <div>
-                            <label className='form-label' htmlFor='phone'>Phone:</label>
-                            <input className='form-input' type='text' name='phone' value={phone} onChange={handlePhone} required/>
+                            <label 
+                                className='form-label' 
+                                htmlFor='phone'>
+                                Phone:
+                            </label>
+                            <input 
+                                className='form-input' 
+                                type='text' 
+                                name='phone' 
+                                value={phone} 
+                                onChange={handlePhone} 
+                                required
+                            />
                         </div>
                         <div>
-                            <label className='form-label' htmlFor='chosenAnimal'>Adopting:</label>
-                            <input className='form-input' type='text' name='chosenAnimal' value={pet.name} required/>
+                            <label 
+                                className='form-label' 
+                                htmlFor='chosenAnimal'>
+                                Adopting:
+                            </label>
+                            <input 
+                                className='form-input' 
+                                type='text' 
+                                name='chosenAnimal' 
+                                value={pet.name} 
+                                required
+                            />
                         </div>
                         <div>
-                            <label className='form-label' htmlFor='personalStatement'>Why do you want to adopt?</label>
-                            <input className='form-input' type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement} required/>
+                            <label 
+                                className='form-label' 
+                                htmlFor='personalStatement'>
+                                Why do you want to adopt?
+                            </label>
+                            <input 
+                                className='form-input' 
+                                type='text' 
+                                name='personalStatement' 
+                                value={personalStatement} 
+                                onChange={handlePersonalStatement} 
+                                required
+                            />
                         </div>
                         <div>
-                            <input type='submit' name='submit' value='Submit' id='form-input-btn' onClick={handleSubmit}></input>
+                            <input 
+                                type='submit' 
+                                name='submit' 
+                                value='Submit' 
+                                id='form-input-btn' 
+                                onClick={handleSubmit}>
+                            </input>
                         </div>
                     </form>
                 </div>
-            <div className="actions">
                 </div>
-                </div>
-        
         )}
     </Popup>
 )

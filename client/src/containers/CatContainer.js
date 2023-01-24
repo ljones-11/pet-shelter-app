@@ -44,8 +44,18 @@ const handleAdoption = newAdoption => {
 return (
 
     <div>
-        <CatsList cats={cats} handleAdoptMeClick={handleAdoptMeClick}/>
-        {catToAdopt ? <AdoptForm handleAdoption={handleAdoption} showAdoptForm={showAdoptForm} handleAdoptMeClick={handleAdoptMeClick} pet={catToAdopt}/>: null}
+        <CatsList 
+            cats={cats} 
+            handleAdoptMeClick={handleAdoptMeClick}
+        />
+        {catToAdopt ? 
+        <AdoptForm 
+            handleAdoption={handleAdoption} 
+            showAdoptForm={showAdoptForm} 
+            handleAdoptMeClick={handleAdoptMeClick} 
+            pet={catToAdopt}
+        />
+        : null}
     </div>
 )
 
