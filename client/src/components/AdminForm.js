@@ -1,4 +1,26 @@
-import {useState} from 'react'
+import {useState} from 'react';
+import styled from 'styled-components';
+
+const StyledForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    max-width: 373px;
+    margin-left: 50px;
+`
+
+const Selecc = styled.select`
+    max-width: 190px;
+`
+const StInput = styled.input`
+    max-width: 190px;
+`
+
+const BottomForm = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 373px;
+`
 
 const AdminForm = ({onCatSubmit, onDogSubmit}) => {
 
@@ -57,32 +79,33 @@ const AdminForm = ({onCatSubmit, onDogSubmit}) => {
     }
 
   return (
-   <form onSubmit={handleFormSubmit}>
+   <StyledForm onSubmit={handleFormSubmit}>
     <h2>Add a new animal for adoption</h2>
-        <label htmlFor='name'>Name:</label>
+        <label htmlFor='name'><strong>Name:</strong></label>
         <input type='text' name='name' value={name} onChange={handleNameChange}/>
 
-        <label htmlFor='breed'>Breed:</label>
+        <label htmlFor='breed'><strong>Breed:</strong></label>
         <input type='text' name='breed' value={breed} onChange={handleBreedChange}/>
 
-        <label htmlFor='age'>Age:</label>
+        <label htmlFor='age'><strong>Age:</strong></label>
         <input type='number' name='age' value={age} onChange={handleAgeChange}/>
 
-        <label htmlFor='about'>About:</label>
+        <label htmlFor='about'><strong>About:</strong></label>
         <input type='text' name='about' value={about} onChange={handleAboutChange}/>
         
-        <label htmlFor='image'>Image:</label>
+        <label htmlFor='image'><strong>Image:</strong></label>
         <input type='text' name='image' value={image} onChange={handleImageChange}/>
         
-        <label htmlFor='type'>Type</label>
-        <select name='type' value={type} onChange={handleTypeChange}>
-            <option value='' disabled>Cat or Dog</option>
-            <option value={Types.CAT}>Cat</option>
-            <option value={Types.DOG}>Dog</option>
-
-        </select>
-        <input type='submit' name='submit' value='Save' />
-   </form>
+        <label htmlFor='type'><strong>Type</strong></label>
+        <BottomForm>
+            <Selecc name='type' value={type} onChange={handleTypeChange}>
+                <option value='' disabled>Cat or Dog</option>
+                <option value={Types.CAT}>Cat</option>
+                <option value={Types.DOG}>Dog</option>
+            </Selecc>
+            <StInput type='submit' name='submit' value='Save' />
+        </BottomForm>
+   </StyledForm>
   )
 }
 

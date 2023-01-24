@@ -1,5 +1,25 @@
 import {useState, useEffect} from 'react'
-import AdminSingleAdoptionrequest from './AdminSingleAdoptionrequest'
+import AdminSingleAdoptionrequest from './AdminSingleAdoptionrequest';
+import styled from 'styled-components';
+
+const StRequests = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 590px;
+  margin-right: 50px;
+`
+
+const RequestsView = styled.div`
+  margin-top: 1em;
+`
+const ListFix = styled.ul`
+  list-style: none;
+  line-height: 30px;
+  padding: 0;
+`
+
+
+
 
 const AdminAdoptionRequests = ({adoptionRequests, handleArchive}) => {
 
@@ -61,22 +81,25 @@ const AdminAdoptionRequests = ({adoptionRequests, handleArchive}) => {
 
 
   return (
-    <div>
+    <StRequests>
         <h2>Adoption Requests</h2>
         <h3>the total of Archived requests is {archivedCounter}</h3>
         <h3>the total of open requests is {openCounter}</h3>
-        <h2>Pick what type of requests to view</h2>
+        
+        <RequestsView>
+          <h2>Pick what type of requests to view</h2>
 
-        <select value={chosenCategory} onChange={handleChange}>
-        <option value="selectCategory" >Select what you want to see</option>
-        <option value='allRequests'>All Requests</option>
-        <option value='openRequests'>Open Requests</option>
-        <option value='archivedRequests'>ArchivedRequests</option>
-
-        </select>
-        {nodesToDisplay}
-             
-    </div>
+          <select value={chosenCategory} onChange={handleChange}>
+          <option value="selectCategory" >Select what you want to see</option>
+          <option value='allRequests'>All Requests</option>
+          <option value='openRequests'>Open Requests</option>
+          <option value='archivedRequests'>ArchivedRequests</option>
+          </select>
+          <ListFix>
+            {nodesToDisplay}
+          </ListFix>
+        </RequestsView> 
+    </StRequests>
   )
 }
 export default AdminAdoptionRequests

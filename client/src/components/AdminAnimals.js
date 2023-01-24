@@ -1,7 +1,24 @@
 import {useState, useEffect} from 'react'
 import AdminCat from './AdminCat'
 import AdminDog from './AdminDog'
+import styled from 'styled-components'
 
+const AnimalDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 590px;
+  margin-left: 50px;
+  position: sticky;
+`
+const ListFix = styled.ul`
+  list-style: none;
+  line-height: 30px;
+  padding: 0;
+`
+
+const NoStretchSelect = styled.select`
+  max-width: 373px;
+`
 const AdminAnimals = ({dogs, cats, updateDog, updateCat, handleDogDelete, handleCatDelete}) => {
 
   // states for dropdown menu
@@ -76,24 +93,23 @@ const AdminAnimals = ({dogs, cats, updateDog, updateCat, handleDogDelete, handle
   }
 
   return (
-    <div>
+    <AnimalDiv>
         <h2>Pick animal category</h2>
-      <select value={chosenCategory} onChange={handleChange}>
+      <NoStretchSelect value={chosenCategory} onChange={handleChange}>
         <option value="selectCategory" >Select what you want to see</option>
         <option value='allDogs'>All Dogs</option>
-        <option value='allNotAdoptedDogs'>All Not adopted Dogs</option>
+        <option value='allNotAdoptedDogs'>All Unadopted Dogs</option>
         <option value='allAdoptedDogs'>All Adopted Dogs</option>
 
         <option value='allCats'>All Cats</option>
         <option value='allAdoptedCats'>All Adopted Cats</option>
-        <option value='allNotAdoptedCats'>All Not adopted Cats</option>
+        <option value='allNotAdoptedCats'>All Unadopted Cats</option>
 
-      </select>
-        <div>
+      </NoStretchSelect>
+        <ListFix>
           {nodesToDisplay}
-
-        </div>
-    </div>
+        </ListFix>
+    </AnimalDiv>
   )
 }
 
