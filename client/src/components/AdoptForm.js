@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import Swal from 'sweetalert2'
 
 
 const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => {
@@ -52,6 +53,38 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
         resetForm()
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if(firstName && lastName && phone && personalStatement) {
+            handleAdoptMeClick();
+            Swal.fire({
+                title: `Thanks for your interest in ${pet.name}!`,
+                text: `We will review your details and be in contact as soon as possible.`,
+                confirmButtonText: 'Return',
+                width:'40em',
+                color: '#434343',
+                background:'#ffffff',
+                confirmButtonColor: 'grey',
+                imageUrl: 'https://media.istockphoto.com/id/1030792294/vector/cute-simple-dog-face-vector.jpg?s=612x612&w=0&k=20&c=6ROQhjs2c2SuLxXCGo7s6flPd2zgH2vLLtS4Qxyfzl4=',
+                imageWidth: '10em',
+                imageHeight: '10em'
+            })
+        } else {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Please complete all fields',
+                confirmButtonText: 'Return',
+                width:'20em',
+                color: '#434343',
+                background:'#ffffff',
+                confirmButtonColor: 'grey',
+                imageUrl: 'https://static.thenounproject.com/png/4381019-200.png',
+                imageWidth: '8em',
+                imageHeight: '8em'
+            })
+        }
+    }
+
 return (
     <Popup open={showAdoptForm} modal nested contentStyle={{ width: '30%'}}>
         {close => (
@@ -83,7 +116,7 @@ return (
                             <input className='form-input' type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement} required/>
                         </div>
                         <div>
-                            <input type='submit' name='submit' value='Submit' id='form-input-btn' onClick={handleAdoptMeClick}></input>
+                            <input type='submit' name='submit' value='Submit' id='form-input-btn' onClick={handleSubmit}></input>
                         </div>
                     </form>
                 </div>

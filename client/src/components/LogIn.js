@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {useNavigate} from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 const LogIn = ({setIsAdmin}) => {
@@ -14,7 +15,18 @@ const LogIn = ({setIsAdmin}) => {
         if(success){
         navigate('/admin')}
         else{
-            setError('Invalide userName and or Password')
+            Swal.fire({
+                title: `Error!`,
+                text: `Wrong username and/or password. Please try again or go away!`,
+                confirmButtonText: 'Return',
+                width:'40em',
+                color: '#434343',
+                background:'#ffffff',
+                confirmButtonColor: 'grey',
+                imageUrl: 'https://thumbs.dreamstime.com/b/do-not-enter-cats-dogs-sign-symbol-white-transparent-background-cat-dog-animal-prohibition-184073120.jpg',
+                imageWidth: '10em',
+                imageHeight: '10em'
+            })
         }
     } 
 
