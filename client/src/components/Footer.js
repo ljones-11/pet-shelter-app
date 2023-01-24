@@ -7,11 +7,11 @@ const FooterStyle = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* margin-top: 3em; */
-  /* position: relative; */
   position: fixed;
   bottom: 0;
   width: 100%;
+  font-family: 'Gotham Rounded';
+  font-size: 18px;
 
 `
 

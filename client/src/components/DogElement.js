@@ -61,8 +61,10 @@ const DogElement = ({dog, handleAdoptMeClick}) => {
                 <p>{ dog.breed }</p>
                 <p>{ dog.age } years old</p>
                 <p>{ dog.about }</p>
+
                 <HeartButton onClick={handleFavourites}><span>💖</span></HeartButton>
-                <Buttons onClick={handleAdoptMeClick}>Adopt Me!</Buttons>
+                <Buttons onClick={() => {handleAdoptMeClick(dog)}}>Adopt Me!</Buttons>
+
             </Card>
 
         </div>
