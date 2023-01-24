@@ -13,6 +13,7 @@ const logoText2 = require('../logo_text_shadow.png')
         <>
             <header className="header-container">
                 {/* <h1 className='title-h1'>furFinder</h1> */}
+                <NavLink to="/" activeClassName="active">
                 <div className="logo-nav-container">
                     <div className="logo-container">
                         <img className="logo-text-img" src={logoText2}/>
@@ -20,6 +21,7 @@ const logoText2 = require('../logo_text_shadow.png')
                     </div>
                     <img className="logo-img" src={petLogo}/>
                 </div>
+                </NavLink>
                 <nav className="nav-container">
                     <ul className="nav-ul">
                         <li>
