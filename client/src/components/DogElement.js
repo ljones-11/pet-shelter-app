@@ -27,15 +27,21 @@ const Image = styled.img`
     max-width: 80%;
     max-height: 50%;
 `
+const Buttons = styled.button`
+    background-color: #ffffff;
+    border-color: transparent;
+    border-radius: 6px;
+    
+`
 
 const DogElement = ({dog, handleAdoptMeClick}) => {
 
     const [favourites, setFavourites] = useState([])
     const [adoptFormOpen, setAdoptFormOpen] = useState(false)
     
-    useEffect(()=> {
-        handleFavourites();
-    },[])
+    // useEffect(()=> {
+    //     handleFavourites();
+    // })
 
     const handleFavourites = (event) => {
         console.log('Favourited!')
@@ -55,7 +61,7 @@ const DogElement = ({dog, handleAdoptMeClick}) => {
                 <p>{ dog.age }</p>
                 <p>{ dog.about }</p>
                 <HeartButton onClick={handleFavourites}><span>❤️</span></HeartButton>
-                <button onClick={handleAdoptMeClick}>Adopt Me!</button>
+                <Buttons onClick={handleAdoptMeClick}>Adopt Me!</Buttons>
             </Card>
 
         </div>
