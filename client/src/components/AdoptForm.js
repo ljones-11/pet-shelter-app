@@ -60,27 +60,31 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
             Swal.fire({
                 title: `Thanks for your interest in ${pet.name}!`,
                 text: `We will review your details and be in contact as soon as possible.`,
+                icon: 'success',
                 confirmButtonText: 'Return',
+                
                 width:'40em',
                 color: '#434343',
                 background:'#ffffff',
                 confirmButtonColor: 'grey',
-                imageUrl: 'https://media.istockphoto.com/id/1030792294/vector/cute-simple-dog-face-vector.jpg?s=612x612&w=0&k=20&c=6ROQhjs2c2SuLxXCGo7s6flPd2zgH2vLLtS4Qxyfzl4=',
-                imageWidth: '10em',
-                imageHeight: '10em'
+                // imageUrl: 'https://media.istockphoto.com/id/1030792294/vector/cute-simple-dog-face-vector.jpg?s=612x612&w=0&k=20&c=6ROQhjs2c2SuLxXCGo7s6flPd2zgH2vLLtS4Qxyfzl4=',
+                // imageWidth: '10em',
+                // imageHeight: '10em',
             })
         } else {
             Swal.fire({
                 title: 'Error!',
                 text: 'Please complete all fields',
+                icon: 'warning',
                 confirmButtonText: 'Return',
+                
                 width:'20em',
                 color: '#434343',
                 background:'#ffffff',
                 confirmButtonColor: 'grey',
-                imageUrl: 'https://static.thenounproject.com/png/4381019-200.png',
-                imageWidth: '8em',
-                imageHeight: '8em'
+                // imageUrl: 'https://static.thenounproject.com/png/4381019-200.png',
+                // imageWidth: '8em',
+                // imageHeight: '8em'
             })
         }
     }
