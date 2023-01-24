@@ -8,7 +8,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
     const[firstName, setFirstName] = useState('')
     const[lastName, setLastName] = useState('')
     const[phone, setPhone] = useState('')
-    const[chosenAnimal, setChosenAnimal] = useState('')
+    const[chosenAnimal, setChosenAnimal] = useState(pet.name)
     const[personalStatement, setPersonalStatement] = useState('')
 
     const handleFirstName = (event) => {
@@ -76,7 +76,7 @@ return (
                         </div>
                         <div>
                             <label className='form-label' htmlFor='chosenAnimal'>Adopting:</label>
-                            <input className='form-input' type='text' name='chosenAnimal' value={pet.name} onChange={handleChosenAnimal} required/>
+                            <input className='form-input' type='text' name='chosenAnimal' value={pet.name} required/>
                         </div>
                         <div>
                             <label className='form-label' htmlFor='personalStatement'>Why do you want to adopt?</label>
