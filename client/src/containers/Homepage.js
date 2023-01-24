@@ -1,4 +1,4 @@
-import React from 'react'
+mimport React from 'react'
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom'
 
