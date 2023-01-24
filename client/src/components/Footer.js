@@ -1,8 +1,28 @@
 import React from 'react'
+import styled from 'styled-components'
+
+
+const FooterStyle = styled.footer`
+  background-color: #fd5564;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* margin-top: 3em; */
+  /* position: relative; */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+`
 
 const Footer = () => {
   return (
-  <footer> fotteres</footer>
+  <FooterStyle> 
+    <p> 1 Barkroad, G43 A03 Glasgow</p>
+    <p>Call us on: 0123 456 123</p>
+    <p>furFinder@furFinder.com</p>
+
+  </FooterStyle>
   )
 }
 
