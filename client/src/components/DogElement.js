@@ -2,8 +2,9 @@ import React, {useState, useEffect} from "react";
 import styled from 'styled-components';
 
 const HeartButton = styled.button`
-background-color: transparent;
-border:none;
+    background-color: transparent;
+    border:none;
+    padding:5px 0px;
 
 `
 const Card = styled.div`
@@ -58,9 +59,9 @@ const DogElement = ({dog, handleAdoptMeClick}) => {
                 <Image src={dog.image} alt="no image"/>
                 <Name>{ dog.name }</Name>
                 <p>{ dog.breed }</p>
-                <p>{ dog.age }</p>
+                <p>{ dog.age } years old</p>
                 <p>{ dog.about }</p>
-                <HeartButton onClick={handleFavourites}><span>❤️</span></HeartButton>
+                <HeartButton onClick={handleFavourites}><span>💖</span></HeartButton>
                 <Buttons onClick={handleAdoptMeClick}>Adopt Me!</Buttons>
             </Card>
 

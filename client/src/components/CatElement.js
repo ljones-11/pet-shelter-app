@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import styled from 'styled-components';
 
 const HeartButton = styled.button`
-background-color: transparent;
-border:none;
+    background-color: transparent;
+    border:none;
+    padding:5px 0px;
+
 `
 const Card = styled.div`
     display: flex;
@@ -33,6 +35,7 @@ const Buttons = styled.button`
     
 `
 
+
 const CatElement = ({cat, handleAdoptMeClick}) => {
     const [favourites, setFavourites] = useState([])
     
@@ -56,9 +59,9 @@ const CatElement = ({cat, handleAdoptMeClick}) => {
                 <Image src={cat.image} alt="no image"/>
                 <Name>{cat.name}</Name>
                 <p>{cat.breed}</p>
-                <p>{cat.age}</p>
+                <p>{cat.age} years old</p>
                 <p>{cat.about}</p>
-                <HeartButton onClick={handleFavourites}><span>❤️</span></HeartButton>
+                <HeartButton onClick={handleFavourites}><span>💖</span></HeartButton>
                 <Buttons onClick={handleAdoptMeClick}>Adopt Me!</Buttons>
             </Card>
         </div>
