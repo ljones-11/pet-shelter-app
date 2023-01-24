@@ -6,6 +6,7 @@ const NavBar = () => {
 
 const petLogo = require('../petlogo_nocolour.png')
 const logoText = require('../logo_text.png')
+const logoText2 = require('../logo_text_shadow.png')
 
     return(
         <>
@@ -13,7 +14,7 @@ const logoText = require('../logo_text.png')
                 {/* <h1 className='title-h1'>furFinder</h1> */}
                 <div className="logo-nav-container">
                     <div className="logo-container">
-                        <img className="logo-text-img" src={logoText}/>
+                        <img className="logo-text-img" src={logoText2}/>
                         <em><h4 className="tagline">Swipe for a pawfect match!</h4></em>
                     </div>
                     <img className="logo-img" src={petLogo}/>

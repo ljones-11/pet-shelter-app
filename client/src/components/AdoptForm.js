@@ -53,7 +53,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick}) => {
     };
 
 return (
-    <Popup open={showAdoptForm} modal nested>
+    <Popup open={showAdoptForm} modal nested contentStyle={{ width: '30%'}}>
         {close => (
             <div className="modal">
                 <button className="close" onClick={handleAdoptMeClick} >&times;</button>
@@ -63,34 +63,34 @@ return (
                 <div className="content">
                     <form onSubmit={handleAdoptionForm} className='form'>
                         <div>
-                            <label htmlFor='firstName'>First Name:</label>
-                            <input type='text' name='firstName' value={firstName} onChange={handleFirstName}/>
+                            <label className='form-label' htmlFor='firstName'>First Name:</label>
+                            <input className='form-input' type='text' name='firstName' value={firstName} onChange={handleFirstName} required/>
                         </div>
                         <div>
-                            <label htmlFor='lastName'>Last Name:</label>
-                            <input type='text' name='lastName' value={lastName} onChange={handleLastName}/>
+                            <label className='form-label' htmlFor='lastName'>Last Name:</label>
+                            <input  className='form-input'type='text' name='lastName' value={lastName} onChange={handleLastName} required/>
                         </div>
                         <div>
-                            <label htmlFor='phone'>Phone:</label>
-                            <input type='text' name='phone' value={phone} onChange={handlePhone}/>
+                            <label className='form-label' htmlFor='phone'>Phone:</label>
+                            <input className='form-input' type='text' name='phone' value={phone} onChange={handlePhone} required/>
                         </div>
                         <div>
-                            <label htmlFor='chosenAnimal'>Adopting:</label>
-                            <input type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal}/>
+                            <label className='form-label' htmlFor='chosenAnimal'>Adopting:</label>
+                            <input className='form-input' type='text' name='chosenAnimal' value={chosenAnimal} onChange={handleChosenAnimal} required/>
                         </div>
                         <div>
-                            <label htmlFor='personalStatement'>Why do you want to adopt?</label>
-                            <input type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement}/>
+                            <label className='form-label' htmlFor='personalStatement'>Why do you want to adopt?</label>
+                            <input className='form-input' type='text' name='personalStatement' value={personalStatement} onChange={handlePersonalStatement} required/>
                         </div>
                         <div>
-                            <input type='submit' name='submit' value='Submit'></input>
+                            <input type='submit' name='submit' value='Submit' id='form-input-btn' onClick={handleAdoptMeClick}></input>
                         </div>
-                       
                     </form>
                 </div>
             <div className="actions">
                 </div>
                 </div>
+        
         )}
     </Popup>
 )
