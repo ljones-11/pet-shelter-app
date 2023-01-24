@@ -183,6 +183,7 @@ a:hover {
 
 .modal {
   font-size: 12px;
+  
 }
 
 .form-input {
@@ -192,6 +193,8 @@ a:hover {
   border-radius: 0.3em;
   font-family: 'proxima-nova';
   font-size: 18px;
+  border-color: #fd5564;
+  border-width: 2px;
 }
 .modal > .header {
   width: 100%;
