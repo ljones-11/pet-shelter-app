@@ -156,4 +156,57 @@ select {
   border: 1px solid #cfcece;
 }
 
+/* animation */
+
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  19% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
+}
+.popup-content {
+  -webkit-animation: anvil .5s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}
+
+.logo-nav-container {
+  display: flex;
+  margin:1em;
+}
+
+.logo-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.logo-text-img {
+  max-width: 370px;
+  margin:0
+}
+
+.tagline {
+  text-align: center;
+  font-family: 'Gotham Rounded';
+  color:#fd5564;
+}
+
+a {
+  text-decoration: none;
+  color:#434343;
+}
+
+a:hover {
+  color:#fd5564
+}
 
