@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 
 const NavBar = () => {
@@ -22,16 +23,16 @@ const logoText2 = require('../logo_text_shadow.png')
                 <nav className="nav-container">
                     <ul className="nav-ul">
                         <li>
-                            <Link to="/">Home</Link>
+                            <NavLink to="/" activeClassName="active">Home</NavLink><br/>
                         </li>
                         <li>
-                            <Link to="/dogs">Dogs</Link>
+                            <NavLink to="/dogs" activeClassName="active">Dogs</NavLink>
                         </li>
                         <li>
-                            <Link to="/cats">Cats</Link>
+                            <NavLink to="/cats" activeClassName="active">Cats</NavLink>
                         </li>
                         <li>
-                            <Link to="/admin">Admin</Link>
+                            <NavLink to="/admin" activeClassName="active">Admin</NavLink>
                         </li>
                     </ul>
                 </nav>
