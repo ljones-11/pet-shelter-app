@@ -1,4 +1,21 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react';
+import styled from 'styled-components';
+
+const FixDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+    max-width: 590px;
+`
+
+const ButtonDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+const Button = styled.button`
+    max-width: 150px;
+`
 
 const AdminSingleAdoptionrequest = ({singleRequest, handleArchive}) => {
 
@@ -10,10 +27,10 @@ const AdminSingleAdoptionrequest = ({singleRequest, handleArchive}) => {
 
     useEffect(() => {
         if (singleRequest.archived){
-            setRequestArchivedClass('This has been archived')
+            setRequestArchivedClass('Archived')
             setArchiveButtonText('Unarchive')
         } else{
-            setRequestArchivedClass('This request is still open')
+            setRequestArchivedClass('Open')
             setArchiveButtonText('Archive Request')
         }
     }, [singleRequest.archived])
@@ -26,15 +43,18 @@ const AdminSingleAdoptionrequest = ({singleRequest, handleArchive}) => {
 // !requestArchivedClass  
   return (
     <div>
-           <li key={singleRequest.id}> First and Last Name: {singleRequest.firstName} {singleRequest.lastName} <br/>
-                 Telephone: {singleRequest.phone} <br/>
-                  Chosen Animal: {singleRequest.chosenAnimal}  <br/>
-                  Personal Statement:{singleRequest.personalStatement}
+        <FixDiv>
+           <li key={singleRequest.id}> <strong>First and Last Name:</strong> {singleRequest.firstName} {singleRequest.lastName} <br/>
+                 <strong>Telephone:</strong> {singleRequest.phone} <br/>
+                  <strong>Chosen Animal:</strong> {singleRequest.chosenAnimal}  <br/>
+                  <strong>Personal Statement:</strong>{singleRequest.personalStatement}
                   <br/>
-                  This Request was archived on: {singleRequest.archived} {requestArchivedClass}  
-                  <button onClick={handleClick}>{archiveButtonText}</button>
+                  <strong>This Request was archived on:</strong> {singleRequest.archived} {requestArchivedClass}  
+                <ButtonDiv>
+                  <Button onClick={handleClick}>{archiveButtonText}</Button>
+                </ButtonDiv>
                   </li>
-      
+        </FixDiv>
     </div>
   )
 }

@@ -86,11 +86,11 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
        {/* if edit animal is set to false it will just render all the cats info */}
       {!editAnimal ? (
       <li key={cat.id}> 
-         <h4>{ cat.name }</h4>
-            <p>Breed: { cat.breed }</p>
-            <p>Age: { cat.age }</p>
-            <p>About: { cat.about }</p>
-            <p>cat was adopted on: {adoptClass}</p>
+         <h3>{ cat.name }</h3>
+            <p><strong>Breed:</strong> { cat.breed }</p>
+            <p><strong>Age:</strong> { cat.age }</p>
+            <p><strong>About:</strong> { cat.about }</p>
+            <p><strong>Cat adopted on:</strong> {adoptClass}</p>
        <button onClick={editExistingCat}> Cat update</button>
         <button onClick={adoptCat}> {adoptButtonText}</button>  
         <button onClick={deleteCat}>Delete</button>
@@ -100,19 +100,19 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
       : (
         <form onSubmit={handleFormSubmit}>
           <h3>Update Form</h3>
-        <label htmlFor='name'>Name:</label>
+        <label htmlFor='name'><strong>Name:</strong></label>
         <input type='text' name='name' value={name} onChange={handleNameChange}/>
 
-        <label htmlFor='breed'>Breed:</label>
+        <label htmlFor='breed'><strong>Breed:</strong></label>
         <input type='text' name='breed' value={breed} onChange={handleBreedChange}/>
 
-        <label htmlFor='age'>Age:</label>
+        <label htmlFor='age'><strong>Age:</strong></label>
         <input type='number' name='age' value={age} onChange={handleAgeChange}/>
 
-        <label htmlFor='about'>About:</label>
+        <label htmlFor='about'><strong>About:</strong></label>
         <input type='text' name='about' value={about} onChange={handleAboutChange}/>
         
-        <label htmlFor='image'>Image:</label>
+        <label htmlFor='image'><strong>Image:</strong></label>
         <input type='text' name='image' value={image} onChange={handleImageChange}/>
         
         <input type='submit' name='submit' value='Save' />

@@ -86,11 +86,11 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
        {/* if edit animal is set to false it will just render all the dogs info */}
       {!editAnimal ? (
       <li key={dog.id}> 
-         <h4>{ dog.name }</h4>
-            <p>Breed: { dog.breed }</p>
-            <p>Age: { dog.age }</p>
-            <p>About: { dog.about }</p>
-            <p>Dog was adopted on: {adoptClass}</p>
+         <h3>{ dog.name }</h3>
+            <p><strong>Breed:</strong> { dog.breed }</p>
+            <p><strong>Age:</strong> { dog.age }</p>
+            <p><strong>About:</strong> { dog.about }</p>
+            <p><strong>Dog adopted on:</strong> {adoptClass}</p>
        <button onClick={editExistingDog}> Dog update</button>
         <button onClick={adoptDog}> {adoptButtonText}</button> 
         <button onClick={deleteDog}>Delete</button>  
@@ -100,20 +100,20 @@ const AdminDog = ({dog, updateDog, handleDogDelete}) => {
       : (
         <form onSubmit={handleFormSubmit}>
           <h3>Update Form</h3>
-        <label htmlFor='name'>Name:</label>
+          <label htmlFor='name'><strong>Name:</strong></label>
         <input type='text' name='name' value={name} onChange={handleNameChange}/>
 
-        <label htmlFor='breed'>Breed:</label>
+        <label htmlFor='breed'><strong>Breed:</strong></label>
         <input type='text' name='breed' value={breed} onChange={handleBreedChange}/>
 
-        <label htmlFor='age'>Age:</label>
+        <label htmlFor='age'><strong>Age:</strong></label>
         <input type='number' name='age' value={age} onChange={handleAgeChange}/>
 
-        <label htmlFor='about'>About:</label>
+        <label htmlFor='about'><strong>About:</strong></label>
         <input type='text' name='about' value={about} onChange={handleAboutChange}/>
         
-        <label htmlFor='image'>Image:</label>
-        <input type='text' name='image' value={image} onChange={handleImageChange}/>  
+        <label htmlFor='image'><strong>Image:</strong></label>
+        <input type='text' name='image' value={image} onChange={handleImageChange}/>
         <input type='submit' name='submit' value='Save' />
    </form>
       )}

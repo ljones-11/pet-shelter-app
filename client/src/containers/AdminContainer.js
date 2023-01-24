@@ -2,7 +2,26 @@
 import {useEffect, useState} from 'react'
 import AdminAdoptionRequests from '../components/AdminAdoptionRequests'
 import AdminAnimals from '../components/AdminAnimals'
-import AdminForm from '../components/AdminForm'
+import AdminForm from '../components/AdminForm';
+import styled from 'styled-components';
+
+const Div = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+const AdminStyledLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+
+`
+const AdminStyledRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1em;
+  
+`
 
 const AdminContainer = () => {
 // url used for id PUT
@@ -105,11 +124,15 @@ const AdminContainer = () => {
     }
 
   return (
-    <div>
-      <AdminForm onCatSubmit={handleCatSubmit} onDogSubmit={handleDogSubmit}/>
-      <AdminAdoptionRequests adoptionRequests={adoptionRequests} handleArchive = {handleAdoptionArchive}/>
-      <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate} handleDogDelete={handleDogDelete} handleCatDelete={handleCatDelete}/>
-    </div>
+    <Div>
+      <AdminStyledLeft>
+        <AdminForm onCatSubmit={handleCatSubmit} onDogSubmit={handleDogSubmit}/>
+        <AdminAnimals dogs={dogs} cats={cats} updateDog= {handleDogUpdate} updateCat={handleCatUpdate} handleDogDelete={handleDogDelete} handleCatDelete={handleCatDelete}/>
+      </AdminStyledLeft>
+      <AdminStyledRight>
+        <AdminAdoptionRequests adoptionRequests={adoptionRequests} handleArchive = {handleAdoptionArchive}/>
+      </AdminStyledRight>
+    </Div>
   )
 }
 
