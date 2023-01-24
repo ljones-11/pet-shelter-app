@@ -1,5 +1,30 @@
 import {useState, useEffect} from 'react'
+import styled from 'styled-components'
 
+const Buttons = styled.button`
+  padding:0px 5px;
+  margin: 0.5em;
+  background-color: #fd5564;
+  color: #ffffff;
+  border-color: transparent;
+  border-radius: 6px;
+
+`
+const StInput = styled.input`
+  padding:0px 5px;
+  margin-top: 10px;
+  background-color: #fd5564;
+  color: #ffffff;
+  border-color: transparent;
+  border-radius: 6px;
+  max-width: 127px;
+`
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 373px;
+
+`
 const AdminCat = ({cat, updateCat, handleCatDelete}) => {
     const [name, setName] = useState(cat.name)
     const [age, setAge] = useState(cat.age)
@@ -91,14 +116,14 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
             <p><strong>Age:</strong> { cat.age }</p>
             <p><strong>About:</strong> { cat.about }</p>
             <p><strong>Cat adopted on:</strong> {adoptClass}</p>
-       <button onClick={editExistingCat}> Cat update</button>
-        <button onClick={adoptCat}> {adoptButtonText}</button>  
-        <button onClick={deleteCat}>Delete</button>
+       <Buttons onClick={editExistingCat}> Cat update</Buttons>
+        <Buttons onClick={adoptCat}> {adoptButtonText}</Buttons>  
+        <Buttons onClick={deleteCat}>Delete</Buttons>
          </li>
       )
       // if edit animal is set to true it will open this form 
       : (
-        <form onSubmit={handleFormSubmit}>
+        <StyledForm onSubmit={handleFormSubmit}>
           <h3>Update Form</h3>
         <label htmlFor='name'><strong>Name:</strong></label>
         <input type='text' name='name' value={name} onChange={handleNameChange}/>
@@ -115,8 +140,8 @@ const AdminCat = ({cat, updateCat, handleCatDelete}) => {
         <label htmlFor='image'><strong>Image:</strong></label>
         <input type='text' name='image' value={image} onChange={handleImageChange}/>
         
-        <input type='submit' name='submit' value='Save' />
-   </form>
+        <StInput type='submit' name='submit' value='Save' />
+   </StyledForm>
       )}
 
     </div>
