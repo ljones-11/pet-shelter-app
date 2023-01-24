@@ -1,4 +1,4 @@
-
+import {useNavigate} from 'react-router-dom'
 import {useEffect, useState} from 'react'
 import AdminAdoptionRequests from '../components/AdminAdoptionRequests'
 import AdminAnimals from '../components/AdminAnimals'
@@ -25,7 +25,11 @@ const AdminStyledRight = styled.div`
   
 `
 
-const AdminContainer = () => {
+const AdminContainer = ({isLoggedIn}) => {
+
+
+  // navigate
+  const navigate = useNavigate()
 // url used for id PUT
   const dogURL = 'http://localhost:9000/api/dogs/'
   const catURL ='http://localhost:9000/api/cats/'
@@ -36,6 +40,9 @@ const AdminContainer = () => {
     const [adoptionRequests, setAdoptionRequests] = useState([])
 
     useEffect(() => {
+        if (!isLoggedIn){
+          navigate('/login')
+        }
         fetchDogs();
         fetchCats();
         fetchAdoptionRequests();
