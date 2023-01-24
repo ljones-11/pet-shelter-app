@@ -35,13 +35,29 @@ const cats = [
             about: 'Needs warmth and attention',
             image: 'https://images.pexels.com/photos/991831/pexels-photo-991831.jpeg',
             // adopted: false
-            }
+            },
+
+        {
+            name: 'Tam',
+            breed: 'Balinese',
+            age: 3,
+            about: 'Laserchaser',
+            image:'https://images.pexels.com/photos/357141/pexels-photo-357141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        },
+        {
+            name: 'Zsa Zsa',
+            breed: 'Ragdoll',
+            age: 6,
+            about: 'No touch! Only pet!',
+            image: 'https://images.pexels.com/photos/13304876/pexels-photo-13304876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        }
+
 ];
 
 const dogs = [
     {
     name : 'Sparky',
-    breed: 'Crested Chinese',
+    breed: 'Boxer',
     age: 4,
     about: 'He zoomin',
     image: "https://images.pexels.com/photos/53261/pexels-photo-53261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -50,7 +66,7 @@ const dogs = [
 
     {
     name: 'Cara',
-    breed: 'Afghan Hound',
+    breed: 'Collie',
     age: 3,
     about: 'Model bitch',
     image: 'https://images.pexels.com/photos/663573/pexels-photo-663573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
@@ -67,11 +83,25 @@ const dogs = [
         },
         {
             name: 'Fred',
-            breed: 'brown dog',
+            breed: 'Shiba/Jack mix',
             age: 4,
             about: 'Loves other dogs',
             image: 'https://images.pexels.com/photos/1906153/pexels-photo-1906153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
             // adopted: false
+            },
+            {
+                name: 'Barkimedes',
+                breed:'Lhasa Apso',
+                age: 9,
+                about: 'Some sort of wizard',
+                image: 'https://images.pexels.com/photos/12800452/pexels-photo-12800452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+            },
+            {
+                name: 'Fuzzy Osbourne',
+                breed:'Jack Russell',
+                age: 10,
+                about: 'Bat eater',
+                image: 'https://images.pexels.com/photos/1629781/pexels-photo-1629781.jpeg'
             }
 ];
 
