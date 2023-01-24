@@ -33,11 +33,17 @@ const Image = styled.img`
     height: 282.4755px;
     display:flex;
     justify-content: flex-start;
+    border-radius: 5%;
 `
 
 const Buttons = styled.button`
     padding:0px 10px;
     margin: 1em;
+    background-color: #fd5564;
+    color: #ffffff;
+    border-color: transparent;
+    border-radius: 6px;
+
 `
 const Homepage = () => {
     const navigate = useNavigate();
