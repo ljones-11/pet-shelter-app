@@ -3,7 +3,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 
-const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, dog}) => {
+const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => {
 
     const[firstName, setFirstName] = useState('')
     const[lastName, setLastName] = useState('')
@@ -58,7 +58,7 @@ return (
             <div className="modal">
                 <button className="close" onClick={handleAdoptMeClick} >&times;</button>
             <div className="header">
-                <h4>Adopt {dog.name}</h4>
+                <h4>Adopt {pet.name}</h4>
             </div>
                 <div className="content">
                     <form onSubmit={handleAdoptionForm} className='form'>
@@ -76,7 +76,7 @@ return (
                         </div>
                         <div>
                             <label className='form-label' htmlFor='chosenAnimal'>Adopting:</label>
-                            <input className='form-input' type='text' name='chosenAnimal' value={dog.name} onChange={handleChosenAnimal} required/>
+                            <input className='form-input' type='text' name='chosenAnimal' value={pet.name} onChange={handleChosenAnimal} required/>
                         </div>
                         <div>
                             <label className='form-label' htmlFor='personalStatement'>Why do you want to adopt?</label>

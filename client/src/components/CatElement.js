@@ -59,7 +59,7 @@ const CatElement = ({cat, handleAdoptMeClick}) => {
                 <p>{cat.age}</p>
                 <p>{cat.about}</p>
                 <HeartButton onClick={handleFavourites}><span>❤️</span></HeartButton>
-                <Buttons onClick={handleAdoptMeClick}>Adopt Me!</Buttons>
+                <Buttons onClick={() => {handleAdoptMeClick(cat)}}>Adopt Me!</Buttons>
             </Card>
         </div>
     )
