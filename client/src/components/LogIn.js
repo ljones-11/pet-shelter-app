@@ -1,7 +1,43 @@
 import React,{useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import styled from 'styled-components';
 
+
+const Div = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'proxima-nova';
+    margin-top: 10px;
+`
+
+const LoginForm = styled.form`
+    display:flex;
+    flex-direction: column;
+    align-items: space-around;
+    width: 400px;
+    background-color: #fd5564;
+    padding:20px;
+    border-radius: 6px;
+`
+
+const StInput = styled.input`
+    background-color: #ffffff;
+    border-color: transparent;
+    border-radius: 6px;
+`
+const StInputButton = styled.input`
+    background-color: #ffffff;
+    border-color: transparent;
+    border-radius: 6px;
+    margin-top: 0.5em;
+`
+
+const Label = styled.label`
+    padding-top: 5px;
+    font-weight: bold;
+`
 
 const LogIn = ({setIsAdmin}) => {
     const navigate = useNavigate()
@@ -43,18 +79,18 @@ const LogIn = ({setIsAdmin}) => {
         setPassword(event.target.value)
     ]
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label >userName</label>
-            <input value={username} type='text' onChange={handleUsernameChange}/>
-            <label>password</label>
-            <input value={password} type='password' onChange={handlePasswordChange}/>
-            <input value='submit' type='submit'/>
+    <Div>
+        <LoginForm onSubmit={handleSubmit}>
+            <Label >Username</Label>
+            <StInput value={username} type='text' onChange={handleUsernameChange}/>
+            <Label>Password</Label>
+            <StInput value={password} type='password' onChange={handlePasswordChange}/>
+            <StInputButton value='Submit' type='submit'/>
 
-        </form>
+        </LoginForm>
 
        <h3>{error}</h3>
-    </div>
+    </Div>
   )
 }
 
