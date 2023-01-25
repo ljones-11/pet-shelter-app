@@ -199,15 +199,17 @@ a:hover {
 .modal > .header {
   width: 100%;
   border-bottom: 1px solid gray;
-  font-size: 18px;
+  font-size: 30px;
   text-align: center;
   padding: 5px;
+  font-family: 'Gotham Rounded';
 }
 .modal > .content {
   display:flex;
   justify-content: center;
   width: 100%;
   padding: 10px 5px;
+  margin-top: 2em;;
 }
 .modal > .actions {
   width: 100%;
@@ -239,6 +241,15 @@ a:hover {
 #form-input-btn {
   border-radius: 0.3em;;
   background-color: transparent;
+  border: 1px solid #d5d9d9;
+  box-shadow: 0 2px 5px 0;
+  color: #0f1111;
+  width: 5em;
+  cursor:pointer;
+}
+
+#form-input:focus {
+  outline: 0;
 }
 
 /* animation */

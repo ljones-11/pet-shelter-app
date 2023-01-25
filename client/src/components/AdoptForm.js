@@ -91,7 +91,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
     }
 
 return (
-    <Popup open={showAdoptForm} modal nested contentStyle={{ width: '320px', height: '380px', borderRadius: '5%'}} className='popup-content'>
+    <Popup open={showAdoptForm} modal nested contentStyle={{ width: '320px', height: '450px', borderRadius: '5%'}} className='popup-content'>
         {close => (
             <div className="modal">
                 <button className="close" onClick={handleAdoptMeClick} >&times;</button>
