@@ -67,7 +67,7 @@ const CatsList = ({cats, handleAdoptMeClick}) => {
 
     return (
         <Section>
-            <NextPrev id="prev" onClick={handlePrevious}><ChevFix src={left}></ChevFix></NextPrev>
+            <NextPrev id="prev" data-testid='previousButton' onClick={handlePrevious}><ChevFix src={left}></ChevFix></NextPrev>
                 <ULFix>
                     {catData}
                 </ULFix>

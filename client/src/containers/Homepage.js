@@ -66,7 +66,7 @@ const Homepage = () => {
                 companion from our shelter and we hope to add more animal shelters
                 across the country!
                 <br></br>
-                <Buttons onClick={goToCats}>Adopt a Cat</Buttons>
+                <Buttons data-testid='cat' onClick={goToCats}>Adopt a Cat</Buttons>
                 <Buttons onClick={goToDogs}>Adopt a Dog</Buttons>
                 </Description>
             
