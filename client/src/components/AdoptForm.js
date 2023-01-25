@@ -42,7 +42,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
     };
 
     const handleAdoptionForm = (event) => {
-        event.preventDefault()
+        // event.preventDefault()
         const payload = {
             firstName: firstName,
             lastName: lastName,
@@ -50,6 +50,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
             chosenAnimal: chosenAnimal,
             personalStatement: personalStatement
         }
+        console.log(payload);
         handleAdoption(payload)
         resetForm()
     };
@@ -57,7 +58,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
     const handleSubmit = (event) => {
         event.preventDefault();
         if(firstName && lastName && phone && personalStatement) {
-            handleAdoptMeClick();
+            handleAdoptionForm()
             Swal.fire({
                 title: `Thanks for your interest in ${pet.name}!`,
                 text: `We will review your details and be in contact as soon as possible.`,
@@ -156,6 +157,7 @@ return (
                                 type='text' 
                                 name='chosenAnimal' 
                                 value={pet.name} 
+                                readOnly
                                 required
                             />
                         </div>
