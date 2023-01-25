@@ -50,6 +50,13 @@ const cats = [
             age: 6,
             about: 'No touch! Only pet!',
             image: 'https://images.pexels.com/photos/13304876/pexels-photo-13304876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        },
+        {
+            name: 'Ruby',
+            breed: 'Tabby moggy',
+            age: 17,
+            about: 'Squeak!',
+            image: './images/ruby.jpg'
         }
 
 ];
