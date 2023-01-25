@@ -99,10 +99,10 @@ const AdminAdoptionRequests = ({adoptionRequests, handleArchive}) => {
         <RequestsView>
           <h2>Pick what type of requests to view</h2>
 
-          <Selecc value={chosenCategory} onChange={handleChange}>
+          <Selecc id='selectreqs' value={chosenCategory} onChange={handleChange}>
           <option value="selectCategory" >Select what you want to see</option>
-          <option value='allRequests'>All Requests</option>
-          <option value='openRequests'>Open Requests</option>
+          <option id='allreqs' value='allRequests'>All Requests</option>
+          <option id='openreqs' value='openRequests'>Open Requests</option>
           <option value='archivedRequests'>ArchivedRequests</option>
           </Selecc>
           <ListFix>
