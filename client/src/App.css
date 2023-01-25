@@ -198,7 +198,7 @@ a:hover {
 }
 .modal > .header {
   width: 100%;
-  border-bottom: 1px solid gray;
+  border-bottom: 2px solid #fd5564;
   font-size: 30px;
   text-align: center;
   padding: 5px;
@@ -234,7 +234,7 @@ a:hover {
 .button-div {
   display:flex;
   justify-content: center;
-  margin-top:1em;
+  margin-top:2em;
   font-size:1.5em;
 }
 
@@ -248,8 +248,23 @@ a:hover {
   cursor:pointer;
 }
 
+textarea {
+
+  width:10.8em;
+
+}
+
 #form-input:focus {
   outline: 0;
+}
+
+.input-div {
+  margin-top: .7em;
+}
+
+.form-label {
+  font-size: 14px;
+  margin-top:2em;
 }
 
 /* animation */

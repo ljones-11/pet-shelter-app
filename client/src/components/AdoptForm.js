@@ -92,7 +92,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
     }
 
 return (
-    <Popup open={showAdoptForm} modal nested contentStyle={{ width: '320px', height: '450px', borderRadius: '5%'}} className='popup-content'>
+    <Popup open={showAdoptForm} modal nested contentStyle={{ width: '320px', height: '540px', borderRadius: '5%'}} className='popup-content'>
         {close => (
             <div className="modal">
                 <button className="close" onClick={handleAdoptMeClick} >&times;</button>
@@ -101,7 +101,7 @@ return (
             </div>
                 <div className="content">
                     <form onSubmit={handleAdoptionForm} className='form'>
-                        <div>
+                        <div className="input-div">
                             <label 
                                 className='form-label' 
                                 htmlFor='firstName'>
@@ -116,7 +116,7 @@ return (
                                 required
                             />
                         </div>
-                        <div>
+                        <div className="input-div">
                             <label 
                                 className='form-label' 
                                 htmlFor='lastName'>
@@ -131,7 +131,7 @@ return (
                                 required
                             />
                         </div>
-                        <div>
+                        <div className="input-div">
                             <label 
                                 className='form-label' 
                                 htmlFor='phone'>
@@ -146,7 +146,7 @@ return (
                                 required
                             />
                         </div>
-                        <div>
+                        <div className="input-div">
                             <label 
                                 className='form-label' 
                                 htmlFor='chosenAnimal'>
@@ -161,13 +161,13 @@ return (
                                 required
                             />
                         </div>
-                        <div>
+                        <div className="input-div">
                             <label 
                                 className='form-label' 
                                 htmlFor='personalStatement'>
                                 Why do you want to adopt?
                             </label>
-                            <input 
+                            <textarea 
                                 className='form-input' 
                                 type='text' 
                                 name='personalStatement' 
