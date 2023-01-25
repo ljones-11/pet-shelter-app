@@ -67,11 +67,11 @@ const CatsList = ({cats, handleAdoptMeClick}) => {
 
     return (
         <Section>
-            <NextPrev onClick={handlePrevious}><ChevFix src={left}></ChevFix></NextPrev>
+            <NextPrev id="prev" onClick={handlePrevious}><ChevFix src={left}></ChevFix></NextPrev>
                 <ULFix>
                     {catData}
                 </ULFix>
-            <NextPrev onClick={handleNext}><ChevFix src={right}></ChevFix></NextPrev>
+            <NextPrev id="next" onClick={handleNext}><ChevFix src={right}></ChevFix></NextPrev>
         </Section>
     )
 

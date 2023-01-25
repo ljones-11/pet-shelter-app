@@ -57,7 +57,7 @@ const CatElement = ({cat, handleAdoptMeClick}) => {
         <div>
             <Card>
                 <Image src={cat.image} alt="no image"/>
-                <Name>{cat.name}</Name>
+                <Name id="name">{cat.name}</Name>
                 <p>{cat.breed}</p>
                 <p>{cat.age} years old</p>
                 <p>{cat.about}</p>
