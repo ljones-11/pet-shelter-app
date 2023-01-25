@@ -57,7 +57,7 @@ const LogIn = ({setIsAdmin}) => {
                 // icon: 'success',
                 confirmButtonText: 'Return',
                 
-                width:'40em',
+                width:'20em',
                 color: '#434343',
                 background:'#ffffff',
                 confirmButtonColor: 'grey',
@@ -84,10 +84,10 @@ const LogIn = ({setIsAdmin}) => {
     <Div>
         <LoginForm onSubmit={handleSubmit}>
             <Label >Username</Label>
-            <StInput value={username} type='text' onChange={handleUsernameChange}/>
+            <StInput id='loginname' value={username} type='text' onChange={handleUsernameChange}/>
             <Label>Password</Label>
-            <StInput value={password} type='password' onChange={handlePasswordChange}/>
-            <StInputButton value='Submit' type='submit'/>
+            <StInput  id='loginpass' value={password} type='password' onChange={handlePasswordChange}/>
+            <StInputButton id='submitlogin' value='Submit' type='submit'/>
 
         </LoginForm>
 
