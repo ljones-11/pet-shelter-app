@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
 
 const Div = styled.div`
     display: flex;
@@ -49,7 +50,21 @@ const LogIn = ({setIsAdmin}) => {
         if(success){
         navigate('/admin')}
         else{
-            setError('Invalide userName and or Password')
+            // setError('Invalide userName and or Password')
+            Swal.fire({
+                title: `Error!`,
+                text: `Wrong username and/or password. Please try again or go away!`,
+                // icon: 'success',
+                confirmButtonText: 'Return',
+                
+                width:'40em',
+                color: '#434343',
+                background:'#ffffff',
+                confirmButtonColor: 'grey',
+                imageUrl: 'https://cdn3.iconfinder.com/data/icons/shiba-inu-dog-emoji-1/500/Angry_shiba_inu_dog_emoticon_1-512.png',
+                imageWidth: '8em',
+                imageHeight: '8em',
+            })
         }
     } 
 
