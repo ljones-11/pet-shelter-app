@@ -65,7 +65,7 @@ const AdoptForm = ({handleAdoption, showAdoptForm, handleAdoptMeClick, pet}) => 
                 // icon: 'success',
                 confirmButtonText: 'Return',
                 
-                width:'40em',
+                width:'20em',
                 color: '#434343',
                 background:'#ffffff',
                 confirmButtonColor: 'grey',
