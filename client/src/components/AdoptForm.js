@@ -174,7 +174,7 @@ return (
                                 required
                             />
                         </div>
-                        <div>
+                        <div className="button-div">
                             <input 
                                 type='submit' 
                                 name='submit' 
